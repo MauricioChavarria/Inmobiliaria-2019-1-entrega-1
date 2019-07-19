@@ -12,7 +12,6 @@ public class Contrato {
     private Long valor;
     private Inmueble inmueble;
     private Cliente cliente;
-    private boolean disponible;
     public static int codigo_nuevo=999;
     
     public static List<Contrato> contratos = new ArrayList<Contrato>();
@@ -23,7 +22,6 @@ public class Contrato {
         this.valor=valor;
         this.inmueble=inmueble;
         this.cliente=cliente;
-        this.setDisponible(disponible);
         
     }
     /*@Override
@@ -69,13 +67,5 @@ public class Contrato {
 	
     public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
-	}
-
-	public boolean getDisponible() {
-		return disponible;
-	}
-
-	public void setDisponible(boolean disponible) {
-		this.disponible = disponible;
 	}
 }

@@ -1,15 +1,16 @@
 package GestorAplicacion;
 
 import java.util.Date;
-import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedList;
+
 
 public class Arriendo extends Contrato{
     
 	private Date fechaInicio;
 	private Date fechafin;
     private Funcionario funcionario;
-    
+
     public Arriendo(int codigo,Date fecha,Long valor,Inmueble inmueble, Cliente cliente, boolean disponible, Date fechaInicio, Date fechafin, Funcionario funcionario) {
         super(codigo,fecha,valor,inmueble, cliente, disponible);
         this.fechaInicio = fechaInicio;
@@ -47,18 +48,20 @@ public class Arriendo extends Contrato{
 		this.funcionario = funcionario;
 	}
 
-    public static LinkedList<Arriendo> arriendosDisponibles(HashMap<Integer, Arriendo> arriendos){
-        LinkedList<Arriendo> disponibles = new LinkedList<>();
-        for (Arriendo a1 : arriendos.values()) {
-            if(a1.getDisponible()){
-                disponibles.add(a1);
+	public static LinkedList<Inmueble> verInmueblesDisponibles(LinkedList<Inmueble> todos_inmuebles) {
+        Iterator<Inmueble> i;
+        Inmueble actual;
+        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<>();
+        i = todos_inmuebles.listIterator();
+        while (i.hasNext()) {
+            actual = i.next();
+            if (actual.getDisponible() == true && actual.getEstado() == "enArriendo") {
+                inmuebles_encontrados.add(actual);
             }
         }
-        if(disponibles.isEmpty()){
+        if (inmuebles_encontrados.isEmpty()) {
             return null;
         }
-        return disponibles;
-        
+        return inmuebles_encontrados;
     }
-
 }

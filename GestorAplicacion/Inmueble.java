@@ -1,5 +1,7 @@
 package GestorAplicacion;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.ArrayList;
 import java.util.Iterator;
 //import java.util.List;
 
@@ -12,14 +14,15 @@ public class Inmueble {
     private int area;
     private int cuartos;
     private int banos;
-    private String tipo;
-    private Compraventa compraventa;
-    private LinkedList<Arriendo> arriendo;
+    private String tipo;//casa o apartamento
+    private String estado;//enArriendo o enCompraventa
     private int antiguedad;
     private String ciudad;
-    private boolean estado;
-
-    public Inmueble(int estrato, String direccion, boolean vigilancia, boolean ascensor, int area, int cuartos, int banos, String tipo, Compraventa compraventa, Arriendo arriendo, int antiguedad, String ciudad, boolean estado) {
+    private boolean disponible = true;
+    
+    public static List<Inmueble> inmuebles = new ArrayList<Inmueble>();
+    
+    public Inmueble(int estrato, String direccion, boolean vigilancia, boolean ascensor, int area, int cuartos, int banos, String tipo, Compraventa compraventa, Arriendo arriendo, int antiguedad, String ciudad, String estado, boolean disponible) {
         this.estrato = estrato;
         this.direccion = direccion;
         this.vigilancia = vigilancia;
@@ -28,11 +31,10 @@ public class Inmueble {
         this.cuartos = cuartos;
         this.banos = banos;
         this.tipo = tipo;
-        this.compraventa = compraventa;
-        this.arriendo = new LinkedList<Arriendo>();
+        this.estado =estado;
         this.antiguedad = antiguedad;
         this.ciudad = ciudad;
-        this.estado = estado;
+        this.disponible = disponible;
     }
 
     /*@Override
@@ -103,21 +105,12 @@ public class Inmueble {
     public void setTipo(String tipo) {
         this.tipo = tipo.trim();
     }
-
-    public Compraventa getCompraventa() {
-        return compraventa;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setCompraventa(Compraventa compraventa) {
-        this.compraventa = compraventa;
-    }
-    
-    public LinkedList<Arriendo> getArriendo() {
-        return arriendo;
-    }
-
-    public void setArriendo(LinkedList<Arriendo> arriendo) {
-        this.arriendo = arriendo;
+    public void setEstado(String estado) {
+        this.estado = estado.trim();
     }
 
     public int getAntiguedad() {
@@ -137,39 +130,22 @@ public class Inmueble {
         this.ciudad = ciudad.trim();
     }
 
-    
-    public boolean getEstado() {
-        return estado;
+    public Boolean getDisponible() {
+        return disponible;
     }
 
-    public void setDisponible(boolean estado) {
-        this.estado = estado;
-    }
-//Metodos-------------------------------------------------------------------------------------------
-    public boolean addArriendo(Arriendo a1) {
-        if (this.getCompraventa() == null) {
-            this.getArriendo().add(a1);
-            return true;
-        } else {
-            return false;
-        }
+    public void setDisponible(Boolean disponible) {
+        this.disponible = disponible;
     }
     
-    public boolean addCompraventa(Compraventa c1) {
-        if (this.getCompraventa() == null) {
-            this.setCompraventa(c1);
-            return true;
-        } else {
-            return false;
-        }
-    }
+//Metodos-------------------------------------------------------------------------------------------
 //Busquedas----------------
 //Arriendos Disponibles
     public static LinkedList<Inmueble> buscarInmueblesEnArriendos(LinkedList<Inmueble> todos_inmuebles) {
         LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<>();
         for (Inmueble iterado : todos_inmuebles) {
 
-            if (iterado.getTipo().equalsIgnoreCase("enArriendo")) {
+            if (iterado.getEstado().equalsIgnoreCase("enArriendo")) {
                 inmuebles_encontrados.add(iterado);
             }
         }
@@ -183,7 +159,7 @@ public class Inmueble {
         LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<>();
         for (Inmueble iterado : todos_inmuebles) {
 
-            if (iterado.getTipo().equalsIgnoreCase("enVenta")) {
+            if (iterado.getEstado().equalsIgnoreCase("enCompraventa")) {
                 inmuebles_encontrados.add(iterado);
             }
         }
@@ -192,15 +168,15 @@ public class Inmueble {
         }
         return inmuebles_encontrados;
     }
-//Todos los inmuebles    
-    public static LinkedList<Inmueble> verInmuebles(LinkedList<Inmueble> todos_inmuebles) {
+//Todos los inmuebles Disponibles
+    public static LinkedList<Inmueble> verInmueblesDisponibles(LinkedList<Inmueble> todos_inmuebles) {
         Iterator<Inmueble> i;
         Inmueble actual;
         LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<>();
         i = todos_inmuebles.listIterator();
         while (i.hasNext()) {
             actual = i.next();
-            if (actual.getEstado() == true) {
+            if (actual.getDisponible() == true) {
                 inmuebles_encontrados.add(actual);
             }
         }

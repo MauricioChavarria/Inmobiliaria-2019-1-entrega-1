@@ -1,6 +1,6 @@
 package GestorAplicacion;
 import java.util.Date;
-import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Compraventa extends Contrato {
@@ -25,19 +25,21 @@ public class Compraventa extends Contrato {
     public void setMedioPago(String medioPago) {
         this.medioPago = medioPago.trim();
     }
-
-    public static LinkedList<Compraventa> compraventasDisponibles(HashMap<Integer, Compraventa> compraventas) {
-        LinkedList<Compraventa> disponibles = new LinkedList<>();
-        for (Compraventa c1 : compraventas.values()) {
-            if (c1.getDisponible()) {
-                disponibles.add(c1);
+    
+    public static LinkedList<Inmueble> verInmueblesDisponibles(LinkedList<Inmueble> todos_inmuebles) {
+        Iterator<Inmueble> i;
+        Inmueble actual;
+        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<>();
+        i = todos_inmuebles.listIterator();
+        while (i.hasNext()) {
+            actual = i.next();
+            if (actual.getDisponible() == true && actual.getEstado() == "enCompraventa") {
+                inmuebles_encontrados.add(actual);
             }
         }
-        if (disponibles.isEmpty()) {
+        if (inmuebles_encontrados.isEmpty()) {
             return null;
         }
-        return disponibles;
-
+        return inmuebles_encontrados;
     }
-
 }

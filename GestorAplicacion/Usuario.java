@@ -1,6 +1,6 @@
 package GestorAplicacion;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 public class Usuario {
 	private Long cedula;
@@ -58,43 +58,7 @@ public class Usuario {
 		this.direccion = direccion;
 	}
 
-//------------------------------------------------------
-	
-	
-	public static void addFuncionario(Funcionario p){
-        Funcionario.funcionarios.add(p);
-    }
-	
-	public static void addAdministrador(Administrador p){
-        Administrador.admins.add(p);
-    }
-	
-	public static Usuario loginCliente(int cedula, String contrasena, ArrayList<Cliente> clientes) {
-		for(Cliente c: clientes){
-            if(c.getCedula()== cedula && c.getContrasena()==contrasena){
-                return c;
-            }
-        }
-       return null;	
-	}
-	
-	public static Usuario loginFuncionario(int cedula, String contrasena, ArrayList<Funcionario> funcionarios) {
-		for(Funcionario c: funcionarios){
-            if(c.getCedula()== cedula && c.getContrasena()==contrasena){
-                return c;
-            }
-        }
-       return null;	
-	}
-	
-	public static Usuario loginAdmin(int cedula, String contrasena, ArrayList<Administrador> admins) {
-		for(Administrador c: admins){
-            if(c.getCedula()== cedula && c.getContrasena()==contrasena){
-                return c;
-            }
-        }
-       return null;	
-	}
+//----------------
 	
 	
 }

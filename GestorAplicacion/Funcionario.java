@@ -8,7 +8,6 @@ public class Funcionario extends Usuario {
 	
 	private Long sueldo;
 	private Long comision;
-	private Cliente clientes;
 	
     public static List<Funcionario> funcionarios = new ArrayList<Funcionario>();
 	
@@ -16,7 +15,6 @@ public class Funcionario extends Usuario {
 		super(cedula, nombre, correo, contrasena, direccion);
 		this.sueldo=sueldo;;
 		this.comision=comision;
-		this.clientes=clientes;
 	}
 
 	public Long getSueldo() {
@@ -35,16 +33,9 @@ public class Funcionario extends Usuario {
 		this.comision = comision;
 	}
 
-	public Cliente getClientes() {
-		return clientes;
-	}
 
-	public void setClientes(Cliente clientes) {
-		this.clientes = clientes;
-	}
-
-	public static LinkedList<Usuario> listarClientes(LinkedList<Usuario> todos_clientes) {
-        LinkedList<Usuario> clientes_encontrados = new LinkedList<>();
+	public static LinkedList<Cliente> listarClientes(LinkedList<Cliente> todos_clientes) {
+        LinkedList<Cliente> clientes_encontrados = new LinkedList<>();
         for (int i=0; i<=Cliente.clientes.size(); i++) {
         	clientes_encontrados.add(Cliente.clientes.get(i));
         }
@@ -52,7 +43,7 @@ public class Funcionario extends Usuario {
     }
 	
 	 public static LinkedList<Inmueble> listaInmuebles(LinkedList<Inmueble> todos_inmuebles){
-			return Inmueble.verInmuebles(todos_inmuebles);
+			return Inmueble.verInmueblesDisponibles(todos_inmuebles);
 		}
 	 public static void agregarCliente(Cliente p){
 		 Cliente.clientes.add(p);
