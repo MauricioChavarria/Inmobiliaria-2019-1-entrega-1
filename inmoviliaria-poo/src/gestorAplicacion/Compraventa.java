@@ -1,4 +1,4 @@
-package GestorAplicacion;
+package gestorAplicacion;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -29,7 +29,7 @@ public class Compraventa extends Contrato {
     public static LinkedList<Inmueble> verInmueblesDisponibles(LinkedList<Inmueble> todos_inmuebles) {
         Iterator<Inmueble> i;
         Inmueble actual;
-        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<>();
+        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<Inmueble>();
         i = todos_inmuebles.listIterator();
         while (i.hasNext()) {
             actual = i.next();

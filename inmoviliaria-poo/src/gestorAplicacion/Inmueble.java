@@ -1,4 +1,4 @@
-package GestorAplicacion;
+package gestorAplicacion;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ArrayList;
@@ -142,7 +142,7 @@ public class Inmueble {
 //Busquedas----------------
 //Arriendos Disponibles
     public static LinkedList<Inmueble> buscarInmueblesEnArriendos(LinkedList<Inmueble> todos_inmuebles) {
-        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<>();
+        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<Inmueble>();
         for (Inmueble iterado : todos_inmuebles) {
 
             if (iterado.getEstado().equalsIgnoreCase("enArriendo")) {
@@ -156,7 +156,7 @@ public class Inmueble {
     }
 //inmuebles en venta
     public static LinkedList<Inmueble> buscarInmueblesEnVenta(LinkedList<Inmueble> todos_inmuebles) {
-        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<>();
+        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<Inmueble>();
         for (Inmueble iterado : todos_inmuebles) {
 
             if (iterado.getEstado().equalsIgnoreCase("enCompraventa")) {
@@ -172,7 +172,7 @@ public class Inmueble {
     public static LinkedList<Inmueble> verInmueblesDisponibles(LinkedList<Inmueble> todos_inmuebles) {
         Iterator<Inmueble> i;
         Inmueble actual;
-        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<>();
+        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<Inmueble>();
         i = todos_inmuebles.listIterator();
         while (i.hasNext()) {
             actual = i.next();
@@ -187,7 +187,7 @@ public class Inmueble {
     }
 //por Estrato
     public static LinkedList<Inmueble> buscarPorEstrato(LinkedList<Inmueble> todos_inmuebles, int estrato) {
-        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<>();
+        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<Inmueble>();
         for (Inmueble iterado : todos_inmuebles) {
             if (iterado.getEstrato() == estrato) {
                 inmuebles_encontrados.add(iterado);
@@ -198,9 +198,9 @@ public class Inmueble {
         }
         return inmuebles_encontrados;
     }
-//por Baños
+//por Baï¿½os
     public static LinkedList<Inmueble> buscarPorNumeroDeBanos(LinkedList<Inmueble> todos_inmuebles, int banosini, int banostop) {
-        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<>();
+        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<Inmueble>();
         int bano;
         for (Inmueble iterado : todos_inmuebles) {
             bano = iterado.getBanos();
@@ -215,7 +215,7 @@ public class Inmueble {
     }
 //por Cuartos
     public static LinkedList<Inmueble> buscarPorNumeroDeCuartos(LinkedList<Inmueble> todos_inmuebles, int cuartosini, int cuartostop) {
-        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<>();
+        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<Inmueble>();
         int c;
         for (Inmueble iterado : todos_inmuebles) {
             c = iterado.getCuartos();

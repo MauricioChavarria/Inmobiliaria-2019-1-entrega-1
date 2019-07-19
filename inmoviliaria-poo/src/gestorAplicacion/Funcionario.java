@@ -1,4 +1,4 @@
-package GestorAplicacion;
+package gestorAplicacion;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -35,7 +35,7 @@ public class Funcionario extends Usuario {
 
 
 	public static LinkedList<Cliente> listarClientes(LinkedList<Cliente> todos_clientes) {
-        LinkedList<Cliente> clientes_encontrados = new LinkedList<>();
+        LinkedList<Cliente> clientes_encontrados = new LinkedList<Cliente>();
         for (int i=0; i<=Cliente.clientes.size(); i++) {
         	clientes_encontrados.add(Cliente.clientes.get(i));
         }
