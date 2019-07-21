@@ -1,6 +1,8 @@
 # GESTOR DE ACTIVIDADES PARA EMPRESA INMOBILIARIA
 
-## Introducción
+## INTRODUCCION
+
+# FASE DE ANALISIS
 
 ## Descripcion del funcionamineto de Inmobiliaria Arrenda-Todo
 
@@ -13,31 +15,21 @@ Los asesores deben tener un número de clientes, un cliente debe ser atendido po
 ## Modelo verbal de las clases asociadas de la página
 
 1) Inmueble:
-un inmueble es una representación sobre la cual se hace o ejecuta un contrato, por tanto, siempre debe existir uno que respalde dicho contrato.
-<li>Los inmuebles solo son ofrecidos por los clientes que desean poner en venta o arriendo su inmueble, un inmueble tiene 1 dueño (cliente vendedor/arrendador).</li>
-<li>Debe estar en uno de dos estados: disponible (venta o arriendo) o no disponible (vendido o arrendado).</li>
+un inmueble es una representación sobre la cual se hace o ejecuta un contrato, por tanto, siempre debe existir uno que respalde dicho contrato.Los inmuebles solo son ofrecidos por los clientes que desean poner en venta o arriendo su inmueble, un inmueble tiene 1 dueño (cliente vendedor/arrendador).Debe estar en uno de dos estados: disponible (venta o arriendo) o no disponible (vendido o arrendado).
 
 2) Contrato:
-Un contrato es el papel firmado, donde se incluyen los términos y condiciones del arriendo o compraventa. Este contrato hace referencia al producto final o servicio que presta la inmobiliaria.
-<li>Un contrato tiene asociado un inmueble, solo puede ser de tipo Compraventa o Arriendo.</li>
-<li>Debe tener un cliente vendedor/arrendador y un comprador/arrendatario, debe ser diligenciado, autorizado y manipulado por un funcionario.</li>
+Un contrato es el papel firmado, donde se incluyen los términos y condiciones del arriendo o compraventa. Este contrato hace referencia al producto final o servicio que presta la inmobiliaria.Un contrato tiene asociado un inmueble, solo puede ser de tipo Compraventa o Arriendo. Debe tener un cliente vendedor/arrendador y un comprador/arrendatario, debe ser diligenciado, autorizado y manipulado por un funcionario.
 
 3) Arriendo:
-Un arriendo es una clase de referencia ligada directamente al tipo de contrato, esta se usa cuando el inmueble se arrienda, por lo tanto, debe ser incluida en Contrato.
-<li>Debe tener asociado un cliente arrendador/arrendatario.</li> <li>Debe existir en un contrato.</li>
+Un arriendo es una clase de referencia ligada directamente al tipo de contrato, esta se usa cuando el inmueble se arrienda, por lo tanto, debe ser incluida en Contrato. Debe tener asociado un cliente arrendador/arrendatario. Debe existir en un contrato.
 
 4) Compraventa:
-Es una entidad de referencia ligada directamente al tipo de contrato, esta se da cuando se hace un contrato de compra o venta.
-<li>Debe tener asociado un cliente vendedor/comprador, debe existir en un contrato.</li>
+Es una entidad de referencia ligada directamente al tipo de contrato, esta se da cuando se hace un contrato de compra o venta. Debe tener asociado un cliente vendedor/comprador, debe existir en un contrato.
 
 5) Usuario:
-Esta clase es la que aloja a todos los usuarios del sistema, tiene las funciones básicas de ser usuario, cada usuario debe tener estas características.
-<li>Deben ser objetos de la clase usuario.</li>
-<li>es la que inicia la aplicación por tanto cuenta con opciones de login y registro.</li>
-
+Esta clase es la que aloja a todos los usuarios del sistema, tiene las funciones básicas de ser usuario, cada usuario debe tener estas características. Deben ser objetos de la clase usuario. Es la que inicia la aplicación por tanto cuenta con opciones de login y registro.
 6) Usuario_Invitado:
-Esta clase es heredada de Usuario, el usuario invitado es aquel que puede ingresar a la página y consultar opciones básicas, esto significa que no tiene permisos de acceso que tendría un usuario registrado.
-<li>Tiene la opción de registrarse</li>
+Esta clase es heredada de Usuario, el usuario invitado es aquel que puede ingresar a la página y consultar opciones básicas, esto significa que no tiene permisos de acceso que tendría un usuario registrado.Tiene la opción de registrarse
 
 7) Funcionario:
 El funcionario es un tipo de Usuario, también heredada de Usuario,tiene opciones avanzadas entre las principales: crear contratos.
@@ -64,19 +56,28 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 
 ### Inmueble
 Atributos:
-<li>estrato: [private, Int]</li>
-<li>direccion: [private, String]</li>
-<li>vigilancia: [private, Boolean</li>
-<li>ascensor: [private, Boolean]</li>
-<li>area: [private, Int]</li>
-<li>cuartos: [private, Int]</li>
-<li>baños: [private, Int]</li>
-<li>tipo: [private, String]</li>
-<li>estado: [private, String]</li>
-<li>antiguedad: [private, Int]</li>
-<li>ciudad: [private, String]</li>
-<li>disponible: [private, Boolean]</li>
+<li>estrato: [private, Int], el estrato hace referencia a la clasificación social por numeros hecha en Colombia (1, 2, 3, 4, 5, 6)</li>
+<li>direccion: [private, String], la direccion se escribe como una cadena de caracteres entre comillas ("Carrera100#10-20")</li>
+<li>vigilancia: [private, Boolean], este atributo afirma o niega la existencia de vigilancia en el inmueble (True or False)</li>
+<li>ascensor: [private, Boolean], este atributo afirma o niega la existencia de ascensor en el inmueble (True or False)</li>
+<li>area: [private, Int], el área corresponde a la magnitud en metros cuadrados del inmueble (85)</li>
+<li>cuartos: [private, Int], este atributo hace referencia al número de cuartos que posee el inmueble (1, 2,..., n)</li>
+<li>baños: [private, Int], este atributo hace referencia al número de baños que posee el inmueble (1, 2,..., n)</li>
+<li>tipo: [private, String], aquí se puede verificar el tipo de inmueble, escrito en una cadena de caracteres (casa, apartamento, etc)</li>
+<li>estado: [private, String], este atributo hace referencia al tipo de contrato que desea realizar el cliente (enArriendo o enCompraventa)</li>
+<li>antiguedad: [private, Int], hace referencia a la cantidad de años que tiene el inmueble (1, 2,....,n)</li>
+<li>ciudad: [private, String] esta atributo describe la ciudad donde se encuentra ubicado el inmueble, descrito en una cadena de caracteres("Medellín", "Rionegro", etc)</li>
+<li>disponible: [private, Boolean], aquí se evidencia si el inmueble está disponible (True:enArriendo o enCompraventa) o(False: arrendado o vendido)</li>
 
 Métodos:
 
 
+# FASE DE DISEÑO
+
+# FASE DE IMPLEMENTACIÓN
+
+# CONCLUSIONES
+
+# ANEXOS
+
+# BIBLIOGRAFÍA
