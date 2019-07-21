@@ -12,81 +12,60 @@ Los asesores deben tener un número de clientes, un cliente debe ser atendido po
 
 ### Modelo verbal de las clases asociadas de la página
 
-#### Inmueble: un inmueble es una representación sobre la cual se hace o ejecuta un contrato, por tanto, siempre debe existir uno que respalde dicho contrato, los inmuebles solo son ofrecidos por los clientes que desean poner en venta o arriendo su inmueble. 
+1) Inmueble
+un inmueble es una representación sobre la cual se hace o ejecuta un contrato, por tanto, siempre debe existir uno que respalde dicho contrato, los inmuebles solo son ofrecidos por los clientes que desean poner en venta o arriendo su inmueble. 
 •	Un inmueble tiene 1 dueño (cliente vendedor/arrendador).
 •	Debe estar en uno de dos estados: disponible (venta o arriendo) o no disponible (vendido o arrendado).
 
-####Contrato
+2) Contrato
 Un contrato es el papel firmado, donde se incluyen los términos y condiciones del arriendo o compraventa. Este contrato hace referencia al producto final o servicio que presta la inmobiliaria.
 •	Un contrato tiene asociado un Inmueble
 •	Solo puede ser de tipo Compraventa o Arriendo
 •	Debe tener un cliente vendedor/arrendador y un comprador/arrendatario.
 •	Debe ser diligenciado, autorizado y manipulado por un funcionario.
-####Arriendo
+
+3) Arriendo
 Un arriendo es una clase de referencia ligada directamente al tipo de contrato, esta se usa cuando el inmueble se arrienda, por lo tanto, debe ser incluida en Contrato.
 •	Debe tener asociado un cliente arrendador/arrendatario
 •	Debe existir en un contrato
-####Compraventa
+
+4) Compraventa
 Es una entidad de referencia ligada directamente al tipo de contrato, esta se da cuando se hace un contrato de compra o venta.
 •	Debe tener asociado un cliente vendedor/comprador.
 •	Debe existir en un contrato
-####Usuario
+
+5) Usuario
 Esta clase es la que aloja a todos los usuarios del sistema, tiene las funciones básicas de ser usuario.
 •	Cada usuario debe tener estas características, deben ser objetos de la clase usuario.
 •	Es la que inicia la aplicación por tanto cuenta con opciones de login y registro.
-####Usuario_Invitado
+6) Usuario_Invitado
 Esta clase es heredada de Usuario, el usuario invitado es aquel que puede ingresar a la página y consultar opciones básicas.
-####Funcionario
+
+7) Funcionario
 El funcionario es un tipo de Usuario, también heredada de Usuario. Tiene opciones avanzadas entre las principales, crear contratos.
-####Administrador
+
+8) Administrador
 El usuario administrador posee todos los permisos de edición, agregar campos etc, también es heredado de Usuario.
-####Cliente
-Esta clase también es hija de Usuario, posee características propias como por ejemplo ofrecer inmuebles (poner en arriendo/venta o arrendar/comprar). 
+
+9) Cliente
+Esta clase también es hija de Usuario, posee características propias como por ejemplo ofrecer inmuebles (poner en arriendo/venta o arrendar
+
+## Diagrama de clases UML
+Esta representacion gráfica ayudará a entender el modelo verbal anteriormente descrito, en este mismo se pueden ver las relaciones que existe entre clases, la cardinalidad y atributos/métodos.
+
+* [DIAGRAMA DE CLASES UML](https://drive.google.com/open?id=1Pcddm9otUvvFZf18R64ALlCXV5us9vxP).
 
 
 
 
+
+
+
+AYUDAS
 ```
 Give examples
 ```
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ## Deployment
 
