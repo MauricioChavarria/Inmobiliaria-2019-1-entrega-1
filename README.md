@@ -55,22 +55,88 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 ## Descripción detallada de cada clase
 
 ### Inmueble
+
 Atributos:
-<li>estrato: [private, Int], el estrato hace referencia a la clasificación social por numeros hecha en Colombia (1, 2, 3, 4, 5, 6)</li>
-<li>direccion: [private, String], la direccion se escribe como una cadena de caracteres entre comillas ("Carrera100#10-20")</li>
-<li>vigilancia: [private, Boolean], este atributo afirma o niega la existencia de vigilancia en el inmueble (True or False)</li>
-<li>ascensor: [private, Boolean], este atributo afirma o niega la existencia de ascensor en el inmueble (True or False)</li>
-<li>area: [private, Int], el área corresponde a la magnitud en metros cuadrados del inmueble (85)</li>
-<li>cuartos: [private, Int], este atributo hace referencia al número de cuartos que posee el inmueble (1, 2,..., n)</li>
-<li>baños: [private, Int], este atributo hace referencia al número de baños que posee el inmueble (1, 2,..., n)</li>
-<li>tipo: [private, String], aquí se puede verificar el tipo de inmueble, escrito en una cadena de caracteres (casa, apartamento, etc)</li>
-<li>estado: [private, String], este atributo hace referencia al tipo de contrato que desea realizar el cliente (enArriendo o enCompraventa)</li>
-<li>antiguedad: [private, Int], hace referencia a la cantidad de años que tiene el inmueble (1, 2,....,n)</li>
-<li>ciudad: [private, String] esta atributo describe la ciudad donde se encuentra ubicado el inmueble, descrito en una cadena de caracteres("Medellín", "Rionegro", etc)</li>
-<li>disponible: [private, Boolean], aquí se evidencia si el inmueble está disponible (True:enArriendo o enCompraventa) o(False: arrendado o vendido)</li>
+<li>estrato: [private, Int] (1 o 2 o 3 o 4 o 5 o 6)</li>
+<li>direccion: [private, String] ("Carrera100#10-20")</li>
+<li>vigilancia: [private, Boolean] (True or False)</li>
+<li>ascensor: [private, Boolean](True or False)</li>
+<li>area: [private, Int] (85)</li>
+<li>cuartos: [private, Int] (1 o 2 o ... o n)</li>
+<li>baños: [private, Int] (1 o 2 o ... o n)</li>
+<li>tipo: [private, String] ("casa" o "apartamento")</li>
+<li>estado: [private, String] ("enArriendo" o "enVenta")</li>
+<li>antiguedad: [private, Int](1 o 2 o ... o n)</li>
+<li>ciudad: [private, String] ("Medellín" o "Rionegro" u "otraciudad")</li>
+<li>disponible: [private, Boolean] (True si está enArriendo o enVenta o False si está arrendado o vendido)</li>
+
+
 
 Métodos:
 
+<li>buscarInmueblesenArriendo(): [Public] (estado=="enArriendo" && disponible==True)</li>
+<li>buscarInmueblesenVenta(): [Public] (estado=="enVenta" && disponible==True)</li>
+<li>verInmueblesDisponibles(): (disponible==True)</li>
+<li>buscarporEstrato(): (estrato==4)</li>
+<li>buscarporNumeroBaños(): (baños==3)</li>
+<li>buscarporNumeroCuartos(): (cuartos==3)</li>
+<li>buscarporArea(): (area==85)</li>
+<li>buscarporTipo(): (tipo=="apartamento")</li>
+<li>verificarVigilancia(): (vigilancia==True)</li>
+<li>verificarAscensor(): (ascensor==True)</li>
+<li>buscarporAntiguedad(): (Antiguedad==10)</li>
+
+### Contrato
+
+Atributos:
+
+Métodos:
+
+### Arriendo
+
+Atributos:
+
+Métodos:
+
+
+### Compraventa
+
+Atributos:
+
+
+Métodos:
+
+
+### Usuario
+
+Atributos:
+
+Métodos:
+
+### Usuario_Invitado
+
+Atributos:
+
+
+Métodos:
+
+
+### Administrador
+
+
+Atributos: 
+
+
+Métodos:
+
+
+### Funcionario
+
+
+Atributos:
+
+
+Métodos:  
 
 # FASE DE DISEÑO
 
