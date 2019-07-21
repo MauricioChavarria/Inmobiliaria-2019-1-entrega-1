@@ -55,8 +55,8 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 
 ### Inmueble
  Atributos:
-<br • estrato: [privado, Int]/>
-• direccion: [privado, String]
+<li>• estrato: [privado, Int]</li>
+<li>• direccion: [privado, String]</li>
 •	
 
 
