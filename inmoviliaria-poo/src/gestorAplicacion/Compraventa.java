@@ -18,11 +18,7 @@ public class Compraventa extends Contrato {
     public String toString() {
         return "Compraventa{" + "comprador=" + comprador + ", medioPago=" + medioPago + '}';
     }
-
     
-
-    
-
     public Cliente getComprador() {
         return comprador;
     }
