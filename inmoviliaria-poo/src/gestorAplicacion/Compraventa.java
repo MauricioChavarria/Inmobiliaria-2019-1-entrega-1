@@ -40,7 +40,7 @@ public class Compraventa extends Contrato {
     }
 
     public static LinkedList<Compraventa> compraventasDisponibles(HashMap<Integer, Compraventa> compraventas) {
-        LinkedList<Compraventa> disponibles = new LinkedList<>();
+        LinkedList<Compraventa> disponibles = new LinkedList<Compraventa>();
         for (Compraventa c1 : compraventas.values()) {
             if (c1.getDisponible()) {
                 disponibles.add(c1);

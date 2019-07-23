@@ -15,12 +15,15 @@ public class Administrador extends Usuario {
 	public static Administrador editarCampo(){
 		return null;
 	}
+	
 	public static Administrador agregarCampo(){
 		return null;
 	}
+	
 	public static Administrador eliminarCampo(){
 		return null;
 	}
+	
 	public static Administrador agregarFuncionario(){
 		return null;
 	}
@@ -44,9 +47,11 @@ public class Administrador extends Usuario {
 	public static void addFuncionario(Funcionario f){
 		 Funcionario.funcionarios.add(f);
 	}
+	
 	public static Administrador getAdministrador(int cc,List<Administrador> admins) {
         return admins.get(cc);
     }
+	
 	public static Administrador login(int cedula, String contrasena, ArrayList<Administrador> admins) {
         
         for(Administrador a: admins){

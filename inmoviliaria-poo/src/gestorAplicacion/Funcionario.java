@@ -13,7 +13,7 @@ public class Funcionario extends Usuario {
 	
 	public Funcionario(int cedula, String nombre, String correo, String contrasena, String direccion, Long sueldo, Long comision, Cliente clientes) {
 		super(cedula, nombre, correo, contrasena, direccion);
-		this.sueldo=sueldo;;
+		this.sueldo=sueldo;
 		this.comision=comision;
 	}
 

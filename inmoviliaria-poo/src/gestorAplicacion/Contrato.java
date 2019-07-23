@@ -75,7 +75,7 @@ public class Contrato {
 
     //por ciudad
     public static LinkedList<Contrato> buscarPorCiudad(HashMap<Integer, Contrato> contratos, String ciudad) {
-        LinkedList<Contrato> todos_los_contratos = new LinkedList<>();
+        LinkedList<Contrato> todos_los_contratos = new LinkedList<Contrato>();
         for (Contrato contra : contratos.values()) {
             if (contra.getInmueble().getCiudad().equalsIgnoreCase(ciudad)) {
                 todos_los_contratos.add(contra);
@@ -89,7 +89,7 @@ public class Contrato {
 
     //por estrato
     public static LinkedList<Contrato> buscarPorEstrato(HashMap<Integer, Contrato> contratos, int estrato) {
-        LinkedList<Contrato> todos_los_contratos = new LinkedList<>();
+        LinkedList<Contrato> todos_los_contratos = new LinkedList<Contrato>();
         for (Contrato contra : contratos.values()) {
             if (contra.getInmueble().getEstrato() == estrato) {
                 todos_los_contratos.add(contra);
@@ -103,7 +103,7 @@ public class Contrato {
     
     //por numero de banos
     public static LinkedList<Contrato> buscarPorNumeroDeBanos(HashMap<Integer, Contrato> contratos, int banosini, int banostop) {
-        LinkedList<Contrato> todos_los_contratos = new LinkedList<>();
+        LinkedList<Contrato> todos_los_contratos = new LinkedList<Contrato>();
         int bano;
         for (Contrato contra : contratos.values()) {
             bano = contra.getInmueble().getBanos();
@@ -119,7 +119,7 @@ public class Contrato {
     
     //por numero de cuartos
     public static LinkedList<Contrato> buscarPorNumeroDeCuartos(HashMap<Integer, Contrato> contratos, int cuartosini, int cuartostop) {
-        LinkedList<Contrato> todos_los_contratos = new LinkedList<>();
+        LinkedList<Contrato> todos_los_contratos = new LinkedList<Contrato>();
         int c;
         for (Contrato contra : contratos.values()) {
             c = contra.getInmueble().getCuartos();
@@ -135,7 +135,7 @@ public class Contrato {
     
     //por area
     public static LinkedList<Contrato> buscarPorArea(HashMap<Integer, Contrato> contratos, int areaini, int areatop) {
-        LinkedList<Contrato> todos_los_contratos = new LinkedList<>();
+        LinkedList<Contrato> todos_los_contratos = new LinkedList<Contrato>();
         int area;
         for (Contrato contra : contratos.values()) {
             area = contra.getInmueble().getArea();

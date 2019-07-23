@@ -37,7 +37,7 @@ public class Arriendo extends Contrato{
     }
     
     public static LinkedList<Arriendo> arriendosDisponibles(HashMap<Integer, Arriendo> arriendos){
-        LinkedList<Arriendo> disponibles = new LinkedList<>();
+        LinkedList<Arriendo> disponibles = new LinkedList<Arriendo>();
         for (Arriendo a1 : arriendos.values()) {
             if(a1.getDisponible()){
                 disponibles.add(a1);
