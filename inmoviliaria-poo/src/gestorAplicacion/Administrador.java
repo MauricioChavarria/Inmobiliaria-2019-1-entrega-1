@@ -12,22 +12,6 @@ public class Administrador extends Usuario {
 		super(cedula, nombre, correo, contrasena, direccion);
 	}
 	
-	public static Administrador editarCampo(){
-		return null;
-	}
-	
-	public static Administrador agregarCampo(){
-		return null;
-	}
-	
-	public static Administrador eliminarCampo(){
-		return null;
-	}
-	
-	public static Administrador agregarFuncionario(){
-		return null;
-	}
-	
 	public static LinkedList<Funcionario> listarFuncionarios(LinkedList<Funcionario> todos_funcionarios){
 		 LinkedList<Funcionario> funcionarioa_encontrados = new LinkedList<Funcionario>();
 	        for (Funcionario iterado : todos_funcionarios) {

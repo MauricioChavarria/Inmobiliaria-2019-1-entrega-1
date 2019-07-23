@@ -5,11 +5,10 @@ package gestorAplicacion;
 public class Usuario {
 	private int cedula;
 	private String nombre;
-    private String correo;
-    private String contrasena;
-    private String direccion;
-    
-    
+    	private String correo;
+    	private String contrasena;
+    	private String direccion;
+	
 	public Usuario(int cedula, String nombre, String correo, String contrasena, String direccion) {
 		this.cedula=cedula;
 		this.nombre=nombre;
