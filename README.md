@@ -56,7 +56,7 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 
 ### Inmueble
 
-<u>Atributos:</u>
+<ul>Atributos:</ul>
 <li>codigo_inmueble: [private, Int] (12345)</li>
 <li>estrato: [private, Int] (1 o 2 o 3 o 4 o 5 o 6)</li>
 <li>direccion: [private, String] ("Carrera100#10-20")</li>
@@ -71,7 +71,7 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 <li>ciudad: [private, String] ("Medellín" o "Rionegro" u "otraciudad")</li>
 <li>disponible: [private, Boolean] (True si está enArriendo o enVenta o False si está arrendado o vendido)</li>
 
-<u>Métodos:</u>
+<ul>Métodos:</ul>
 
 
 <li>buscarInmueblesenArriendo(): [Public] (estado=="enArriendo" && disponible==True)</li>
@@ -86,7 +86,7 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 
 ### Contrato
 
-<u>Atributos:</u>
+<ul>Atributos:</ul>
 
 <li>codigocontrato: [static private, String] ("lHyu23")</li>
 <li>fecha: [private, Date] (10/08/2019)</li>
@@ -94,34 +94,34 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 <li>inmueble: [private, Inmueble](codigo.inmueble)</li>
 <li>cliente: [private, Cliente] (cedula.cliente)</li>
 
-<u>Métodos:</u>
+<ul>Métodos:</ul>
 
 ### Arriendo
 
-<u>Atributos:</u>
+<ul>Atributos:</ul>
 
 <li>fechaInicio: [private, Date] (10/08/2019)</li>
 <li>fechaFin: [private, Date] (10/08/2019)</li>
 <li>funcionario: [private, Funcionario] (cedula.funcionario)</li>
 
-<u>Métodos:</u>
+<ul>Métodos:</ul>
 
 <li>arriendosDisponibles(): (estado=="enArriendo" && disponible==True)</li>
 
 ### Compraventa
 
-<u>Atributos:</u>
+<ul>Atributos:</ul>
 
 <li>medioPago: [private, String] ("tarjetadecredito")</li>
 <li>funcionario: [private, Funcionario] (cedula.funcionario)</li>
 
-<u>Métodos:</u>
+<ul>Métodos:</ul>
 
 <li>compraVentasdisponibles(): (estado=="enVenta" && disponible==True)</li>
 
 ### Usuario
 
-<u>Atributos:</u>
+<ul>Atributos:</ul>
 
 <li>cedula: [private, Long] (20001010202l)</li>
 <li>nombre: [private, String] ("Juan Perez")</li>
@@ -130,7 +130,7 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 <li>direccion: [private, String] ("carrera23#78-44")</li>
 
 
-<u>Métodos:</u>
+<ul>Métodos:</ul>
 
 <li>login(): (permitir ingresar a perfil de usuario)</li>
 <li>registrarUsuario(): (permitir registrarse en plataforma)</li>
@@ -138,7 +138,7 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 ### Administrador
 
 
-<u>Atributos:</u> 
+<ul>Atributos:</ul> 
 
 <li>cedula: [private, Long] (20001010202l)</li>
 <li>nombre: [private, String] ("Juan Perez")</li>
@@ -147,7 +147,7 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 <li>direccion: [private, String] ("carrera23#78-44")</li>
 
 
-<u>Métodos:</u>
+<ul>Métodos:</ul>
 
 <li>editarCampo(): (permitir editar cualquier campo dentro de la aplicacion)</li>
 <li>agregarCampo(): (permitir agregar cualquier campo dentro de la aplicacion)</li>
@@ -157,7 +157,7 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 ### Funcionario
 
 
-<u>Atributos:</u>
+<ul>Atributos:</ul>
 
 <li>cedula: [private, Long] (20001010202l)</li>
 <li>nombre: [private, String] ("Juan Perez")</li>
@@ -168,7 +168,7 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 
 
 
-<u>Métodos:</u>  
+<ul>Métodos:</ul>  
 
 <li>listarClientes(): (permitir listar clientes)</li>
 <li>listarInmuebles(): (permitir listar inmuebles)</li>
