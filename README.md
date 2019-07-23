@@ -56,7 +56,7 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 
 ### Inmueble
 
-<ul>Atributos:</ul>
+Atributos:
 <li>codigo_inmueble: [private, Int] (12345)</li>
 <li>estrato: [private, Int] (1 o 2 o 3 o 4 o 5 o 6)</li>
 <li>direccion: [private, String] ("Carrera100#10-20")</li>
@@ -88,7 +88,7 @@ Métodos:
 
 ### Contrato
 
-<ul>Atributos:</ul>
+Atributos:
 
 <li>codigocontrato: [static private, String] ("lHyu23")</li>
 <li>fecha: [private, Date] (10/08/2019)</li>
@@ -98,11 +98,11 @@ Métodos:
 
 
 
-<ul>Métodos:</ul>
+Métodos:
 
 ### Arriendo
 
-<ul>Atributos:</ul>
+Atributos:
 
 <li>fechaInicio: [private, Date] (10/08/2019)</li>
 <li>fechaFin: [private, Date] (10/08/2019)</li>
@@ -110,26 +110,26 @@ Métodos:
 
 
 
-<ul>Métodos:</ul>
+Métodos:
 
 <li>arriendosDisponibles(): (estado=="enArriendo" && disponible==True)</li>
 
 ### Compraventa
 
-<ul>Atributos:</ul>
+Atributos:
 
 <li>medioPago: [private, String] ("tarjetadecredito")</li>
 <li>funcionario: [private, Funcionario] (cedula.funcionario)</li>
 
 
 
-<ul>Métodos:</ul>
+Métodos:
 
 <li>compraVentasdisponibles(): (estado=="enVenta" && disponible==True)</li>
 
 ### Usuario
 
-<ul>Atributos:</ul>
+Atributos:
 
 <li>cedula: [private, Long] (20001010202l)</li>
 <li>nombre: [private, String] ("Juan Perez")</li>
@@ -140,7 +140,7 @@ Métodos:
 
 
 
-<ul>Métodos:</ul>
+Métodos:
 
 <li>login(): (permitir ingresar a perfil de usuario)</li>
 <li>registrarUsuario(): (permitir registrarse en plataforma)</li>
@@ -148,7 +148,7 @@ Métodos:
 ### Administrador
 
 
-<ul>Atributos:</ul> 
+Atributos:
 
 <li>cedula: [private, Long] (20001010202l)</li>
 <li>nombre: [private, String] ("Juan Perez")</li>
@@ -159,7 +159,7 @@ Métodos:
 
 
 
-<ul>Métodos:</ul>
+Métodos:
 
 <li>editarCampo(): (permitir editar cualquier campo dentro de la aplicacion)</li>
 <li>agregarCampo(): (permitir agregar cualquier campo dentro de la aplicacion)</li>
@@ -169,7 +169,7 @@ Métodos:
 ### Funcionario
 
 
-<ul>Atributos:</ul>
+Atributos:
 
 <li>cedula: [private, Long] (20001010202l)</li>
 <li>nombre: [private, String] ("Juan Perez")</li>
@@ -178,11 +178,7 @@ Métodos:
 <li>direccion: [private, String] ("carrera23#78-44")</li>
 <li>comision: [private, Long] (1000000l)</li>
 
-
-
-
-
-<ul>Métodos:</ul>  
+Métodos: 
 
 <li>listarClientes(): (permitir listar clientes)</li>
 <li>listarInmuebles(): (permitir listar inmuebles)</li>
@@ -195,6 +191,10 @@ Métodos:
 En la fase de diseño se definen las clases en su totalidad, la forma de organización de los paquetes y el funcionamiento del programa.
 En esta fase establecemos algunos parametros, que consideramos importantes a la hora de crear la aplicacion o el gestor de actividades, este podría ser una (aplicacion, página web) pero es de más bajo nivel, por tanto solo será tipada en código.
 En esta sección definiremos todas las clases que hacen posible el funcionamiento del programa, ya que no solo las presentadas anteriormente consideramos útiles, pues la programacion orientada a objetos posibilita el hecho de reutilizar código, encapsular clases y usar diferentes herramientas que hacen fácil cualquier proceso.
+
+##Capa de persistencia
+
+
 
 # FASE DE IMPLEMENTACIÓN
 
