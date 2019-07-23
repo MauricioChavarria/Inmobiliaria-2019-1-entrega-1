@@ -11,7 +11,7 @@ public class Funcionario extends Usuario {
 	
     public static List<Funcionario> funcionarios = new ArrayList<Funcionario>();
 	
-	public Funcionario(Long cedula, String nombre, String correo, String contrasena, String direccion, Long sueldo, Long comision, Cliente clientes) {
+	public Funcionario(int cedula, String nombre, String correo, String contrasena, String direccion, Long sueldo, Long comision, Cliente clientes) {
 		super(cedula, nombre, correo, contrasena, direccion);
 		this.sueldo=sueldo;;
 		this.comision=comision;
@@ -36,19 +36,36 @@ public class Funcionario extends Usuario {
 
 	public static LinkedList<Cliente> listarClientes(LinkedList<Cliente> todos_clientes) {
         LinkedList<Cliente> clientes_encontrados = new LinkedList<Cliente>();
-        for (int i=0; i<=Cliente.clientes.size(); i++) {
-        	clientes_encontrados.add(Cliente.clientes.get(i));
+        for (Cliente iterado : todos_clientes) {
+        	clientes_encontrados.add(iterado);
         }
         return clientes_encontrados;
     }
 	
-	 public static LinkedList<Inmueble> listaInmuebles(LinkedList<Inmueble> todos_inmuebles){
-			return Inmueble.verInmueblesDisponibles(todos_inmuebles);
+	 public static LinkedList<Inmueble> listarInmuebles(LinkedList<Inmueble> todos_inmuebles){
+		 LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<Inmueble>();
+	        for (Inmueble iterado : todos_inmuebles) {
+	        	inmuebles_encontrados.add(iterado);
+	        }
+	        return inmuebles_encontrados;
 		}
-	 public static void agregarCliente(Cliente p){
+	 public static void addCliente(Cliente p){
 		 Cliente.clientes.add(p);
 	    }
 	 public static void addContrato(Contrato p){
 	        Contrato.contratos.add(p);
 	    }
+	 public static Funcionario getFuncionario(int cc,List<Funcionario> funcionarios) {
+	        return funcionarios.get(cc);
+	    }
+	 public static Funcionario login(int cedula, String contrasena, ArrayList<Funcionario> Funcionarios) {
+	        
+         for(Funcionario f: funcionarios){
+             if(f.getCedula()== cedula && f.getContrasena()==contrasena){
+                 return f;
+             }
+         }
+        return null;
+
+    }
 }

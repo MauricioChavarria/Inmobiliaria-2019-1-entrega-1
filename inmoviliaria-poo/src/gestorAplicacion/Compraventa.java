@@ -1,22 +1,35 @@
 package gestorAplicacion;
 import java.util.Date;
-import java.util.Iterator;
+import java.util.HashMap;
 import java.util.LinkedList;
 
 public class Compraventa extends Contrato {
-	
+
+    private Cliente comprador;
     private String medioPago;
 
-    public Compraventa(int codigo, Date fecha, Long valor, Inmueble inmueble, Cliente cliente,boolean disponible, String medioPago) {
-        super(codigo, fecha, valor, inmueble, cliente, disponible);
+    public Compraventa(int codigo,Date fecha,double valor,Inmueble inmueble,boolean disponible, String medioPago) {
+        super(codigo,fecha,valor,inmueble,disponible);
+        this.comprador = null;
         this.medioPago = medioPago;
     }
 
-    /*@Override
+    @Override
     public String toString() {
         return "Compraventa{" + "comprador=" + comprador + ", medioPago=" + medioPago + '}';
-    }*/
+    }
 
+    
+
+    
+
+    public Cliente getComprador() {
+        return comprador;
+    }
+
+    public void setComprador(Cliente comprador) {
+        this.comprador = comprador;
+    }
 
     public String getMedioPago() {
         return medioPago;
@@ -25,21 +38,19 @@ public class Compraventa extends Contrato {
     public void setMedioPago(String medioPago) {
         this.medioPago = medioPago.trim();
     }
-    
-    public static LinkedList<Inmueble> verInmueblesDisponibles(LinkedList<Inmueble> todos_inmuebles) {
-        Iterator<Inmueble> i;
-        Inmueble actual;
-        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<Inmueble>();
-        i = todos_inmuebles.listIterator();
-        while (i.hasNext()) {
-            actual = i.next();
-            if (actual.getDisponible() == true && actual.getEstado() == "enCompraventa") {
-                inmuebles_encontrados.add(actual);
+
+    public static LinkedList<Compraventa> compraventasDisponibles(HashMap<Integer, Compraventa> compraventas) {
+        LinkedList<Compraventa> disponibles = new LinkedList<>();
+        for (Compraventa c1 : compraventas.values()) {
+            if (c1.getDisponible()) {
+                disponibles.add(c1);
             }
         }
-        if (inmuebles_encontrados.isEmpty()) {
+        if (disponibles.isEmpty()) {
             return null;
         }
-        return inmuebles_encontrados;
+        return disponibles;
+
     }
+
 }
