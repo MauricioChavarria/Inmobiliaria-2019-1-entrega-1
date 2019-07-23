@@ -1,37 +1,33 @@
 package gestorAplicacion;
 
 import java.util.Date;
-import java.util.Iterator;
+import java.util.HashMap;
 import java.util.LinkedList;
-
-
 public class Arriendo extends Contrato{
     
-	private Date fechaInicio;
-	private Date fechafin;
-    private Funcionario funcionario;
+    private String agencia;
+    private Date fechafin;
 
-    public Arriendo(int codigo,Date fecha,Long valor,Inmueble inmueble, Cliente cliente, boolean disponible, Date fechaInicio, Date fechafin, Funcionario funcionario) {
-        super(codigo,fecha,valor,inmueble, cliente, disponible);
-        this.fechaInicio = fechaInicio;
+    public Arriendo(int codigo,Date fecha,double valor,Inmueble inmueble,boolean disponible, String medioPago, String agencia, Date fechafin) {
+        super(codigo,fecha,valor,inmueble,disponible);
+        this.agencia = agencia;
         this.fechafin = fechafin;
-        this.funcionario = funcionario;
     }
 
     
-    /*@Override
+    @Override
     public String toString() {
-        return "Arriendo{" + "arrendatario=" + arrendatario + ", agencia=" + agencia + ", fechafin=" + fechafin + '}';
-    }*/
+        return "Arriendo{" + ", agencia=" + agencia + ", fechafin=" + fechafin + '}';
+    }
 
-    public Date getFechaInicio() {
-		return fechaInicio;
-	}
+    public String getAgencia() {
+        return agencia;
+    }
 
-	public void setFechaInicio(Date fechaInicio) {
-		this.fechaInicio = fechaInicio;
-	}
-	
+    public void setAgencia(String agencia) {
+        this.agencia = agencia.trim();
+    }
+
     public Date getFechafin() {
         return fechafin;
     }
@@ -40,28 +36,17 @@ public class Arriendo extends Contrato{
         this.fechafin = fechafin;
     }
     
-    public Funcionario getFuncionario() {
-		return funcionario;
-	}
-
-	public void setFuncionario(Funcionario funcionario) {
-		this.funcionario = funcionario;
-	}
-
-	public static LinkedList<Inmueble> verInmueblesDisponibles(LinkedList<Inmueble> todos_inmuebles) {
-        Iterator<Inmueble> i;
-        Inmueble actual;
-        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<Inmueble>();
-        i = todos_inmuebles.listIterator();
-        while (i.hasNext()) {
-            actual = i.next();
-            if (actual.getDisponible() == true && actual.getEstado() == "enArriendo") {
-                inmuebles_encontrados.add(actual);
+    public static LinkedList<Arriendo> arriendosDisponibles(HashMap<Integer, Arriendo> arriendos){
+        LinkedList<Arriendo> disponibles = new LinkedList<>();
+        for (Arriendo a1 : arriendos.values()) {
+            if(a1.getDisponible()){
+                disponibles.add(a1);
             }
         }
-        if (inmuebles_encontrados.isEmpty()) {
+        if(disponibles.isEmpty()){
             return null;
         }
-        return inmuebles_encontrados;
+        return disponibles;
+        
     }
 }

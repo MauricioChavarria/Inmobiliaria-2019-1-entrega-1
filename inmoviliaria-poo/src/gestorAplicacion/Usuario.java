@@ -3,14 +3,14 @@ package gestorAplicacion;
 //import java.util.ArrayList;
 
 public class Usuario {
-	private Long cedula;
+	private int cedula;
 	private String nombre;
     private String correo;
     private String contrasena;
     private String direccion;
     
     
-	public Usuario(Long cedula, String nombre, String correo, String contrasena, String direccion) {
+	public Usuario(int cedula, String nombre, String correo, String contrasena, String direccion) {
 		this.cedula=cedula;
 		this.nombre=nombre;
 		this.correo=correo;
@@ -18,11 +18,11 @@ public class Usuario {
 		this.direccion=direccion;
 	}
 
-	public Long getCedula() {
+	public int getCedula() {
 		return cedula;
 	}
 	
-	public void setCedula(Long cedula) {
+	public void setCedula(int cedula) {
 		this.cedula = cedula;
 	}
 	
@@ -57,8 +57,5 @@ public class Usuario {
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
-
-//----------------
-	
 	
 }
