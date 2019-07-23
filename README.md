@@ -15,7 +15,7 @@ Los asesores deben tener un número de clientes, un cliente debe ser atendido po
 ## Modelo verbal de las clases asociadas de la página
 
 1) Inmueble:
-un inmueble es una representación sobre la cual se hace o ejecuta un contrato, por tanto, siempre debe existir uno que respalde dicho contrato.Los inmuebles solo son ofrecidos por los clientes que desean poner en venta o arriendo su inmueble, un inmueble tiene 1 dueño (cliente vendedor/arrendador).Debe estar en uno de dos estados: disponible (venta o arriendo) o no disponible (vendido o arrendado).
+un inmueble es una representación sobre la cual se hace o ejecuta un contrato, por tanto, siempre debe existir uno que respalde dicho contrato. Los inmuebles solo son ofrecidos por los clientes que desean poner en venta o arriendo su inmueble, un inmueble tiene 1 dueño (cliente vendedor/arrendador). Debe estar en uno de dos estados: disponible (venta o arriendo) o no disponible (vendido o arrendado).
 
 2) Contrato:
 Un contrato es el papel firmado, donde se incluyen los términos y condiciones del arriendo o compraventa. Este contrato hace referencia al producto final o servicio que presta la inmobiliaria.Un contrato tiene asociado un inmueble, solo puede ser de tipo Compraventa o Arriendo. Debe tener un cliente vendedor/arrendador y un comprador/arrendatario, debe ser diligenciado, autorizado y manipulado por un funcionario.
@@ -57,6 +57,7 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 ### Inmueble
 
 Atributos:
+<li>codigo_inmueble: [private, Int] (12345)</li>
 <li>estrato: [private, Int] (1 o 2 o 3 o 4 o 5 o 6)</li>
 <li>direccion: [private, String] ("Carrera100#10-20")</li>
 <li>vigilancia: [private, Boolean] (True or False)</li>
@@ -82,13 +83,17 @@ Métodos:
 <li>buscarporNumeroCuartos(): (cuartos==3)</li>
 <li>buscarporArea(): (area==85)</li>
 <li>buscarporTipo(): (tipo=="apartamento")</li>
-<li>verificarVigilancia(): (vigilancia==True)</li>
-<li>verificarAscensor(): (ascensor==True)</li>
-<li>buscarporAntiguedad(): (Antiguedad==10)</li>
+
 
 ### Contrato
 
 Atributos:
+
+<li>codigocontrato: [static private, String] ("lHyu23")</li>
+<li>fecha: [private, Date] (10/08/2019)</li>
+<li>valor: [private, Long] (10000000l)</li>
+<li>inmueble: [private, Inmueble](codigo.inmueble)</li>
+<li>cliente: [private, Cliente] (cedula.cliente)</li>
 
 Métodos:
 
@@ -96,47 +101,81 @@ Métodos:
 
 Atributos:
 
+<li>fechaInicio: [private, Date] (10/08/2019)</li>
+<li>fechaFin: [private, Date] (10/08/2019)</li>
+<li>funcionario: [private, Funcionario] (cedula.funcionario)</li>
+
 Métodos:
 
+<li>arriendosDisponibles(): (estado=="enArriendo" && disponible==True)</li>
 
 ### Compraventa
 
 Atributos:
 
+<li>medioPago: [private, String] ("tarjetadecredito")</li>
+<li>funcionario: [private, Funcionario] (cedula.funcionario)</li>
 
 Métodos:
 
+<li>compraVentasdisponibles(): (estado=="enVenta" && disponible==True)</li>
 
 ### Usuario
 
 Atributos:
 
+<li>cedula: [private, Long] (20001010202l)</li>
+<li>nombre: [private, String] ("Juan Perez")</li>
+<li>correo: [private, String] ("juanperez@correo.co")</li>
+<li>contraseña: [private, String]("password")</li>
+<li>direccion: [private, String] ("carrera23#78-44")</li>
+
+
 Métodos:
 
-### Usuario_Invitado
-
-Atributos:
-
-
-Métodos:
-
+<li>login(): (permitir ingresar a perfil de usuario)</li>
+<li>registrarUsuario(): (permitir registrarse en plataforma)</li>
 
 ### Administrador
 
 
 Atributos: 
 
+<li>cedula: [private, Long] (20001010202l)</li>
+<li>nombre: [private, String] ("Juan Perez")</li>
+<li>correo: [private, String] ("juanperez@correo.co")</li>
+<li>contraseña: [private, String]("password")</li>
+<li>direccion: [private, String] ("carrera23#78-44")</li>
+
 
 Métodos:
 
+<li>editarCampo(): (permitir editar cualquier campo dentro de la aplicacion)</li>
+<li>agregarCampo(): (permitir agregar cualquier campo dentro de la aplicacion)</li>
+<li>eliminarCampo(): (permitir eliminar cualquier campo dentro de la aplicacion)</li>
+<li>agregarFuncionario(): (el administador es el único que agrega funcionarios)</li>
 
 ### Funcionario
 
 
 Atributos:
 
+<li>cedula: [private, Long] (20001010202l)</li>
+<li>nombre: [private, String] ("Juan Perez")</li>
+<li>correo: [private, String] ("juanperez@correo.co")</li>
+<li>contraseña: [private, String]("password")</li>
+<li>direccion: [private, String] ("carrera23#78-44")</li>
+<li>comision: [private, Long] (1000000l)</li>
+
+
 
 Métodos:  
+
+<li>listarClientes(): (permitir listar clientes)</li>
+<li>listarInmuebles(): (permitir listar clientes)</li>
+<li>agregarContrato(): (permitir agregar contrato)</li>
+<li>agregarCliente(): (permitir agregar cliente)</li>
+
 
 # FASE DE DISEÑO
 
