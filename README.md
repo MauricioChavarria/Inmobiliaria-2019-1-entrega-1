@@ -71,7 +71,9 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 <li>ciudad: [private, String] ("Medellín" o "Rionegro" u "otraciudad")</li>
 <li>disponible: [private, Boolean] (True si está enArriendo o enVenta o False si está arrendado o vendido)</li>
 
-<ul>Métodos:</ul>
+
+
+Métodos:
 
 
 <li>buscarInmueblesenArriendo(): [Public] (estado=="enArriendo" && disponible==True)</li>
@@ -94,6 +96,8 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 <li>inmueble: [private, Inmueble](codigo.inmueble)</li>
 <li>cliente: [private, Cliente] (cedula.cliente)</li>
 
+
+
 <ul>Métodos:</ul>
 
 ### Arriendo
@@ -103,6 +107,8 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 <li>fechaInicio: [private, Date] (10/08/2019)</li>
 <li>fechaFin: [private, Date] (10/08/2019)</li>
 <li>funcionario: [private, Funcionario] (cedula.funcionario)</li>
+
+
 
 <ul>Métodos:</ul>
 
@@ -114,6 +120,8 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 
 <li>medioPago: [private, String] ("tarjetadecredito")</li>
 <li>funcionario: [private, Funcionario] (cedula.funcionario)</li>
+
+
 
 <ul>Métodos:</ul>
 
@@ -128,6 +136,8 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 <li>correo: [private, String] ("juanperez@correo.co")</li>
 <li>contraseña: [private, String]("password")</li>
 <li>direccion: [private, String] ("carrera23#78-44")</li>
+
+
 
 
 <ul>Métodos:</ul>
@@ -145,6 +155,8 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 <li>correo: [private, String] ("juanperez@correo.co")</li>
 <li>contraseña: [private, String]("password")</li>
 <li>direccion: [private, String] ("carrera23#78-44")</li>
+
+
 
 
 <ul>Métodos:</ul>
@@ -165,6 +177,8 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 <li>contraseña: [private, String]("password")</li>
 <li>direccion: [private, String] ("carrera23#78-44")</li>
 <li>comision: [private, Long] (1000000l)</li>
+
+
 
 
 
