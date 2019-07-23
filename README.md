@@ -179,6 +179,9 @@ Métodos:
 
 # FASE DE DISEÑO
 
+En la fase de diseño se definen las clases en su totalidad, la forma de organización de los paquetes y el funcionamiento del programa.
+En esta fase establecemos algunos parametros, que consideramos importantes a la hora de crear la aplicacion o el gestor de actividades, este podría ser una (aplicacion, página web) pero es de más bajo nivel, por tanto solo será tipada en código.
+
 # FASE DE IMPLEMENTACIÓN
 
 # CONCLUSIONES
