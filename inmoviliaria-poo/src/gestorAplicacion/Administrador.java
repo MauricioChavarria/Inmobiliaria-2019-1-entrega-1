@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Administrador extends Usuario {
+public class Administrador extends Usuario  {
 
     public static List<Administrador> admins = new ArrayList<Administrador>();
 
@@ -34,7 +34,7 @@ public class Administrador extends Usuario {
 	
 	public static Administrador getAdministrador(int cc,List<Administrador> admins) {
         return admins.get(cc);
-    }
+	}		
 	
 	public static Administrador login(int cedula, String contrasena, ArrayList<Administrador> admins) {
         
