@@ -9,16 +9,16 @@ import java.util.*;
 import gestorAplicacion.*;
 
 
-public class SerializeData {
+public class SerializerData {
 
 	/**
 	 * @param args
 	 */
-	LinkedList<Object> objetos = new LinkedList<Object>();
+	static LinkedList<Object> objetos = new LinkedList<Object>();
 	static String nombreArchivo = System.getProperty("user.dir")+"/src/tmp/dataSerialized";
 
 	
-	public SerializeData(){
+	public SerializerData(){
 		Boolean emptyAdministrador = true;
 		Boolean emptyCliente = true;
 		Boolean emptyFuncionario = true;
@@ -38,7 +38,7 @@ public class SerializeData {
 		
 	}
 	
-	public static void serializeDataOut(Object objetos)throws IOException{
+	public static void serializeDataOut()throws IOException{
 	    FileOutputStream fos = new FileOutputStream(nombreArchivo);
 	    ObjectOutputStream oos = new ObjectOutputStream(fos);
 	    oos.writeObject(objetos);
