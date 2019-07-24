@@ -1,4 +1,5 @@
 package gestorAplicacion;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -18,6 +19,8 @@ public class Inmueble {
     private String ciudad;
     private int antiguedad;
     private boolean disponible;
+    
+    public static List<Inmueble> inmuebles = new ArrayList<Inmueble>();
 
     public Inmueble(int predial, int estrato, boolean vigilancia, boolean ascensor, int area, int banos, int cuartos, String tipo, Compraventa compraventa, String ciudad, int antiguedad, boolean disponible) {
         this.predial = predial;
