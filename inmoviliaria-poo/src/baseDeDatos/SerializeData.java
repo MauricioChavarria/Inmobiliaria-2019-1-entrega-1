@@ -22,6 +22,11 @@ public class SerializeData {
 		Boolean emptyAdministrador = true;
 		Boolean emptyCliente = true;
 		Boolean emptyFuncionario = true;
+		Boolean emptyInmueble = true;
+		Boolean emptyArriendo = true;
+		Boolean emptyCompraventa = true;
+		Boolean emptyContrato = true;
+		
 
 
 		if(!Administrador.admins.isEmpty()){
@@ -35,6 +40,23 @@ public class SerializeData {
 		if(!Funcionario.funcionarios.isEmpty()){
 			objetos.push(Funcionario.funcionarios);
 		}else emptyFuncionario = false;
+		
+		if(!Inmueble.inmuebles.isEmpty()){
+			objetos.push(Inmueble.inmuebles);
+		}else emptyInmueble = false;
+		
+		if(!Arriendo.arriendos.isEmpty()){
+			objetos.push(Arriendo.arriendos);
+		}else emptyArriendo = false;
+		
+		if(!Compraventa.compraventas.isEmpty()){
+			objetos.push(Compraventa.compraventas);
+		}else emptyCompraventa = false;
+		
+		if(!Contrato.contratos.isEmpty()){
+			objetos.push(Contrato.contratos);
+		}else emptyContrato = false;
+		
 		
 	}
 	
