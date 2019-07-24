@@ -12,7 +12,9 @@ public class Contrato {
     private Inmueble inmueble;
     private boolean disponible;
     public static int codigo_nuevo=999;
+    
     public static List<Contrato> contratos = new ArrayList<Contrato>();
+    
     public Contrato(int codigo,Date fecha,double valor,Inmueble inmueble,boolean disponible){
         this.codigo=codigo;
         this.fecha=fecha;

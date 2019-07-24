@@ -1,12 +1,16 @@
 package gestorAplicacion;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Compraventa extends Contrato {
 
     private Cliente comprador;
     private String medioPago;
+    
+    public static List<Compraventa> compraventas = new ArrayList<Compraventa>();
 
     public Compraventa(int codigo,Date fecha,double valor,Inmueble inmueble,boolean disponible, String medioPago) {
         super(codigo,fecha,valor,inmueble,disponible);
