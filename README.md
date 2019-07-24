@@ -213,14 +213,13 @@ La capa lógica hace referencia a las clases del programa mostradas al principio
 El paquete que aloja estas clases se llama **gestorAplicacion**
 
 ### Clase Inmueble:
-
-'package gestorAplicacion;
+```
+package gestorAplicacion;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-
 public class Inmueble {
-    
+
     private int predial;
     private int estrato;
     private boolean vigilancia;
@@ -516,10 +515,499 @@ public class Inmueble {
     }
 
 }
-'
+```
+
+### Clase Arriendo:
+
+```package gestorAplicacion;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.LinkedList;
+public class Arriendo extends Contrato{
+    
+    private String agencia;
+    private Date fechafin;
+
+    public Arriendo(int codigo,Date fecha,double valor,Inmueble inmueble,boolean disponible, String medioPago, String agencia, Date fechafin) {
+        super(codigo,fecha,valor,inmueble,disponible);
+        this.agencia = agencia;
+        this.fechafin = fechafin;
+    }
+
+    
+    @Override
+    public String toString() {
+        return "Arriendo{" + ", agencia=" + agencia + ", fechafin=" + fechafin + '}';
+    }
+
+    public String getAgencia() {
+        return agencia;
+    }
+
+    public void setAgencia(String agencia) {
+        this.agencia = agencia.trim();
+    }
+
+    public Date getFechafin() {
+        return fechafin;
+    }
+
+    public void setFechafin(Date fechafin) {
+        this.fechafin = fechafin;
+    }
+    
+    public static LinkedList<Arriendo> arriendosDisponibles(HashMap<Integer, Arriendo> arriendos){
+        LinkedList<Arriendo> disponibles = new LinkedList<Arriendo>();
+        for (Arriendo a1 : arriendos.values()) {
+            if(a1.getDisponible()){
+                disponibles.add(a1);
+            }
+        }
+        if(disponibles.isEmpty()){
+            return null;
+        }
+        return disponibles;
+        
+    }
+}
+ ```
+
+### Clase compraventa:
+
+``` package gestorAplicacion;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.LinkedList;
+
+public class Compraventa extends Contrato {
+
+    private Cliente comprador;
+    private String medioPago;
+
+    public Compraventa(int codigo,Date fecha,double valor,Inmueble inmueble,boolean disponible, String medioPago) {
+        super(codigo,fecha,valor,inmueble,disponible);
+        this.comprador = null;
+        this.medioPago = medioPago;
+    }
+
+    @Override
+    public String toString() {
+        return "Compraventa{" + "comprador=" + comprador + ", medioPago=" + medioPago + '}';
+    }
+    
+    public Cliente getComprador() {
+        return comprador;
+    }
+
+    public void setComprador(Cliente comprador) {
+        this.comprador = comprador;
+    }
+
+    public String getMedioPago() {
+        return medioPago;
+    }
+
+    public void setMedioPago(String medioPago) {
+        this.medioPago = medioPago.trim();
+    }
+
+    public static LinkedList<Compraventa> compraventasDisponibles(HashMap<Integer, Compraventa> compraventas) {
+        LinkedList<Compraventa> disponibles = new LinkedList<Compraventa>();
+        for (Compraventa c1 : compraventas.values()) {
+            if (c1.getDisponible()) {
+                disponibles.add(c1);
+            }
+        }
+        if (disponibles.isEmpty()) {
+            return null;
+        }
+        return disponibles;
+
+    }
+
+}
+```
+
+### Clase Contrato 
+
+```package gestorAplicacion;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+public class Contrato {
+
+    private int codigo;
+    private Date fecha;
+    private double valor;
+    private Inmueble inmueble;
+    private boolean disponible;
+    public static int codigo_nuevo=999;
+    public static List<Contrato> contratos = new ArrayList<Contrato>();
+    public Contrato(int codigo,Date fecha,double valor,Inmueble inmueble,boolean disponible){
+        this.codigo=codigo;
+        this.fecha=fecha;
+        this.inmueble =inmueble;
+        this.valor=valor;
+        this.disponible=disponible;
+    }
+    @Override
+    public String toString() {
+        return "Contrato{" + "codigo=" + codigo + ", fecha=" + fecha + ", valor=" + valor + ", inmueble=" + inmueble + ", disponible=" + disponible + '}';
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(Integer codigo) {
+        this.codigo = codigo;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(Double valor) {
+        this.valor = valor;
+    }
+
+    public Inmueble getInmueble() {
+        return inmueble;
+    }
+
+    public void setInmueble(Inmueble inmueble) {
+        this.inmueble = inmueble;
+    }
+
+    public boolean getDisponible() {
+        return disponible;
+    }
+
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
+
+    //busquedas------------------------------------------------------------------------------------
+    
+    //por codigo
+    public static Contrato buscarContrato(HashMap<Integer, Contrato> contratos, Integer codigo) {
+        Contrato encontrado = contratos.get(codigo);
+        return encontrado;
+    }
+
+    //por ciudad
+    public static LinkedList<Contrato> buscarPorCiudad(HashMap<Integer, Contrato> contratos, String ciudad) {
+        LinkedList<Contrato> todos_los_contratos = new LinkedList<Contrato>();
+        for (Contrato contra : contratos.values()) {
+            if (contra.getInmueble().getCiudad().equalsIgnoreCase(ciudad)) {
+                todos_los_contratos.add(contra);
+            }
+        }
+        if (todos_los_contratos.isEmpty()) {
+            return null;
+        }
+        return todos_los_contratos;
+    }
+
+    //por estrato
+    public static LinkedList<Contrato> buscarPorEstrato(HashMap<Integer, Contrato> contratos, int estrato) {
+        LinkedList<Contrato> todos_los_contratos = new LinkedList<Contrato>();
+        for (Contrato contra : contratos.values()) {
+            if (contra.getInmueble().getEstrato() == estrato) {
+                todos_los_contratos.add(contra);
+            }
+        }
+        if (todos_los_contratos.isEmpty()) {
+            return null;
+        }
+        return todos_los_contratos;
+    }
+    
+    //por numero de banos
+    public static LinkedList<Contrato> buscarPorNumeroDeBanos(HashMap<Integer, Contrato> contratos, int banosini, int banostop) {
+        LinkedList<Contrato> todos_los_contratos = new LinkedList<Contrato>();
+        int bano;
+        for (Contrato contra : contratos.values()) {
+            bano = contra.getInmueble().getBanos();
+            if ((bano>=banosini)&&(bano<=banostop)) {
+                todos_los_contratos.add(contra);
+            }
+        }
+        if (todos_los_contratos.isEmpty()) {
+            return null;
+        }
+        return todos_los_contratos;
+    }
+    
+    //por numero de cuartos
+    public static LinkedList<Contrato> buscarPorNumeroDeCuartos(HashMap<Integer, Contrato> contratos, int cuartosini, int cuartostop) {
+        LinkedList<Contrato> todos_los_contratos = new LinkedList<Contrato>();
+        int c;
+        for (Contrato contra : contratos.values()) {
+            c = contra.getInmueble().getCuartos();
+            if ((c>=cuartosini)&&(c<=cuartostop)) {
+                todos_los_contratos.add(contra);
+            }
+        }
+        if (todos_los_contratos.isEmpty()) {
+            return null;
+        }
+        return todos_los_contratos;
+    }
+    
+    //por area
+    public static LinkedList<Contrato> buscarPorArea(HashMap<Integer, Contrato> contratos, int areaini, int areatop) {
+        LinkedList<Contrato> todos_los_contratos = new LinkedList<Contrato>();
+        int area;
+        for (Contrato contra : contratos.values()) {
+            area = contra.getInmueble().getArea();
+            if ((area>=areaini)&&(area<=areatop)) {
+                todos_los_contratos.add(contra);
+            }
+        }
+        if (todos_los_contratos.isEmpty()) {
+            return null;
+        }
+        return todos_los_contratos;
+    }
+}
+```
+### Clase Usuario:
+
+```package gestorAplicacion;
+
+//import java.util.ArrayList;
+
+public class Usuario {
+    private int cedula;
+    private String nombre;
+        private String correo;
+        private String contrasena;
+        private String direccion;
+    
+    public Usuario(int cedula, String nombre, String correo, String contrasena, String direccion) {
+        this.cedula=cedula;
+        this.nombre=nombre;
+        this.correo=correo;
+        this.contrasena=contrasena;
+        this.direccion=direccion;
+    }
+
+    public int getCedula() {
+        return cedula;
+    }
+    
+    public void setCedula(int cedula) {
+        this.cedula = cedula;
+    }
+    
+    public String getNombre() {
+        return nombre;
+    }
+    
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    public String getCorreo() {
+        return correo;
+    }
+    
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+    
+    public String getContrasena() {
+        return contrasena;
+    }
+    
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+    
+    public String getDireccion() {
+        return direccion;
+    }
+    
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+    
+}
+``` 
+
+### Clase Cliente
+
+```package gestorAplicacion;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Cliente extends Usuario{
+
+    
+    public static List<Cliente> clientes = new ArrayList<Cliente>();
+    public Cliente(int cedula, String nombre, String correo, String contrasena, String direccion) {
+         super(cedula,nombre,correo,contrasena,direccion);
+    }
+    
+    public static void addCliente(Cliente p){
+        clientes.add(p);
+    }
+    public static Cliente getCliente(int cc,List<Cliente> clientes) {
+        return clientes.get(cc);
+    }
+    public static Cliente login(int cedula, String contrasena, ArrayList<Cliente> clientes) {
+        
+         for(Cliente c: clientes){
+             if(c.getCedula()== cedula && c.getContrasena()==contrasena){
+                 return c;
+             }
+         }
+        return null;
+
+    }
+}
+
+``` 
+
+### Clase Administrador
+
+```package gestorAplicacion;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Administrador extends Usuario {
+
+    public static List<Administrador> admins = new ArrayList<Administrador>();
+
+    public Administrador(int cedula, String nombre, String correo, String contrasena, String direccion) {
+        super(cedula, nombre, correo, contrasena, direccion);
+    }
+    
+    public static LinkedList<Funcionario> listarFuncionarios(LinkedList<Funcionario> todos_funcionarios){
+         LinkedList<Funcionario> funcionarioa_encontrados = new LinkedList<Funcionario>();
+            for (Funcionario iterado : todos_funcionarios) {
+                funcionarioa_encontrados.add(iterado);
+            }
+            return funcionarioa_encontrados;
+    }
+    
+    public static LinkedList<Cliente> listarClientes(LinkedList<Cliente> todos_clientes) {
+        LinkedList<Cliente> clientes_encontrados = new LinkedList<Cliente>();
+        for (Cliente iterado : todos_clientes) {
+            clientes_encontrados.add(iterado);
+        }
+        return clientes_encontrados;
+    }
+    
+    public static void addFuncionario(Funcionario f){
+         Funcionario.funcionarios.add(f);
+    }
+    
+    public static Administrador getAdministrador(int cc,List<Administrador> admins) {
+        return admins.get(cc);
+    }
+    
+    public static Administrador login(int cedula, String contrasena, ArrayList<Administrador> admins) {
+        
+        for(Administrador a: admins){
+            if(a.getCedula()== cedula && a.getContrasena()==contrasena){
+                return a;
+            }
+        }
+       return null;
+
+   }
+```
+
+### Clase Funcionario
+
+```package gestorAplicacion;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Funcionario extends Usuario {
+    
+    private Long sueldo;
+    private Long comision;
+    
+    public static List<Funcionario> funcionarios = new ArrayList<Funcionario>();
+    
+    public Funcionario(int cedula, String nombre, String correo, String contrasena, String direccion, Long sueldo, Long comision, Cliente clientes) {
+        super(cedula, nombre, correo, contrasena, direccion);
+        this.sueldo=sueldo;
+        this.comision=comision;
+    }
+
+    public Long getSueldo() {
+        return sueldo;
+    }
+
+    public void setSueldo(Long sueldo) {
+        this.sueldo = sueldo;
+    }
+
+    public Long getComision() {
+        return comision;
+    }
+
+    public void setComision(Long comision) {
+        this.comision = comision;
+    }
 
 
+    public static LinkedList<Cliente> listarClientes(LinkedList<Cliente> todos_clientes) {
+        LinkedList<Cliente> clientes_encontrados = new LinkedList<Cliente>();
+        for (Cliente iterado : todos_clientes) {
+            clientes_encontrados.add(iterado);
+        }
+        return clientes_encontrados;
+    }
+    
+     public static LinkedList<Inmueble> listarInmuebles(LinkedList<Inmueble> todos_inmuebles){
+         LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<Inmueble>();
+            for (Inmueble iterado : todos_inmuebles) {
+                inmuebles_encontrados.add(iterado);
+            }
+            return inmuebles_encontrados;
+        }
+     public static void addCliente(Cliente p){
+         Cliente.clientes.add(p);
+        }
+     public static void addContrato(Contrato p){
+            Contrato.contratos.add(p);
+        }
+     public static Funcionario getFuncionario(int cc,List<Funcionario> funcionarios) {
+            return funcionarios.get(cc);
+        }
+     public static Funcionario login(int cedula, String contrasena, ArrayList<Funcionario> Funcionarios) {
+            
+         for(Funcionario f: funcionarios){
+             if(f.getCedula()== cedula && f.getContrasena()==contrasena){
+                 return f;
+             }
+         }
+        return null;
 
+    }
+}
+```
 # FASE DE IMPLEMENTACIÓN
 
 # CONCLUSIONES
