@@ -2,6 +2,14 @@
 
 ## INTRODUCCION
 
+Un software para la gestion de actividades, procesos y servicios en una empresa posibilita el rápido crecimiento de esta,  en términos de calidad de servicios, clientes y alta competencia. Poder gestionar todo desde un aplicativo, una página web o un programa tiene ventajas asombrosas para los asociados de la empresa y además el contacto con los clientes por medio de plataformas digitales hace que una organizacion trascienda.
+
+Una empresa inmobiliaria que está posicionada en el mercado, que tiene calidad en sus servicios y acapara clientes pero que no dispone de un sistema adecuado para el manejo de su portafolio pierde capacidad competitiva y dinero. Este caso hipotetico donde una organizacion se dá cuenta que tiene problemas de organizacion, visualizacion y contacto con clientes decide implementar en sus labores diarias un sistema que permita el manejo de clientes, servicios y operaciones por medio de alguna herramienta informática. 
+
+La propuesta que se le realiza al jefe de la inmobiliaria es crear un programa que gestione las actividades desde un aplicativo donde los clientes y trabajadores puedan interactuar de tal manera que se cierren contratos de arrendamiento y compra (o que se lleve a cabo la gran mayoría de trámites por medio del mismo).
+
+La parte inicial es la fase de analisis donde se recojen los requisitos minimos del sistema, se crean modelos verbales de lo que se necesita implementar y se define una ruta a seguir en términos de la infraestructura lógica para llevar a cabo la realización de dicho sistema. La segunda parte es la fase de diseños donde por medio del lenguaje de programación orientada a objetos se consiguen materializar algunas ideas para el proyecto, tales como códigos de programación, lenguajes verbales y funciones que tiene el programa. La ultima parte es la de implementación, esta fase permite usar el programa, ver ejemplos de funcionamiento y funcionalidades.
+
 # FASE DE ANALISIS
 
 ## Descripcion del funcionamineto de Inmobiliaria Arrenda-Todo
@@ -12,7 +20,7 @@ Todos los clientes deben asistir a la oficina ubicada en Belén-Rosales para fir
 Los asesores deben tener un número de clientes, un cliente debe ser atendido por un asesor que es el mismo que lleva el contrato, estableciendo la relación entre vendedor/comprador o arrendador/arrendatario. Eso significa que cuando hay un cliente interesado en vender/arrendar, el asesor toma el caso y busca comprador/arrendatario y el mismo hace el contrato y lleva el seguimiento.
 
 
-## Modelo verbal de las clases asociadas de la página
+## Modelo verbal de las clases asociadas del programa
 
 1) Inmueble:
 un inmueble es una representación sobre la cual se hace o ejecuta un contrato, por tanto, siempre debe existir uno que respalde dicho contrato. Los inmuebles solo son ofrecidos por los clientes que desean poner en venta o arriendo su inmueble, un inmueble tiene 1 dueño (cliente vendedor/arrendador). Debe estar en uno de dos estados: disponible (venta o arriendo) o no disponible (vendido o arrendado).
@@ -48,7 +56,7 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 
 ## Diagrama de objetos UML
 
-* [DIAGRAMA DE OBJETOS UML] : AQUÍ VA EL LINK
+* [DIAGRAMA DE OBJETOS UML](https://drive.google.com/file/d/1pKYtPCc9sOI0QTJsQK1kmGFjtVvKxLdl/view?usp=sharing)
 
 
 
@@ -200,7 +208,7 @@ En la capa de persistencia se encuentran los estados de todos los objetos instan
 
 Dentro de la capa de persistencia existen dos paquetes **Basedatos** y **/temp**, el primero aloja todas las clases que permiten crear los archivos de texto, manipularlos, etc. Y dentro del paquete */temp* se guardan los archivos de texto.
 
-### Clase Data o datos
+### Serial
 
 'aquí va el código de la clase datos'
 
@@ -1008,10 +1016,25 @@ public class Funcionario extends Usuario {
     }
 }
 ```
+## Capa de Interfaz de usuario
+
+En la capa de interfaz de usuario lo que se tiene son las clases que permiten a un usuario interactual con el programa, ya que unas clases con los estados de los objetos y otras que permiten crear objetos quedan en el aire sin algun tipo de interacción. Por esa razón es necesario por el momento implementar una capa que al momento de ejecutar el programa se pueda acceder a el, ingresar opciones y navegar. En esta primera entrega es suficiente un menú generico por consola, ya que la implementación de interfaces gráficas es para otro nivel en la programacion orientada a objetos.
+
+El paquete donde se encuentran las clases que realizan esta labor se denomina **uiMain**
+y las clases son las siguientes:
+
+### Clase Main o clase principal
+```Aqui va el codigo```
+
+### Clase OpciondeMenu
+```Aqui va el codigo```
+
+### Clase Menudeconsola
+```Aqui va el codigo```
+
+
 # FASE DE IMPLEMENTACIÓN
 
-# CONCLUSIONES
+En la fase de implementación se muestra el funcionamiento del programa, puesto que al ser un programa en un muy bajo nivel es necesario ser traducido para que un lector pueda entender de que trata el mismo, además de explicar de forma detallada los procesos que se realizaron en cada uno de los códigos a groso modo. 
 
-# ANEXOS
 
-# BIBLIOGRAFÍA
