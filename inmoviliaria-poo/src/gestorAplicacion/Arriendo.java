@@ -1,13 +1,17 @@
 package gestorAplicacion;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
 public class Arriendo extends Contrato{
     
     private String agencia;
     private Date fechafin;
 
+    public static List<Arriendo> arriendos = new ArrayList<Arriendo>();
+    
     public Arriendo(int codigo,Date fecha,double valor,Inmueble inmueble,boolean disponible, String medioPago, String agencia, Date fechafin) {
         super(codigo,fecha,valor,inmueble,disponible);
         this.agencia = agencia;
