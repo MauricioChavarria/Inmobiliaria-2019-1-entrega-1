@@ -56,7 +56,8 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 
 ### Inmueble
 
-Atributos:
+**Atributos:**
+
 <li>codigo_inmueble: [private, Int] (12345)</li>
 <li>estrato: [private, Int] (1 o 2 o 3 o 4 o 5 o 6)</li>
 <li>direccion: [private, String] ("Carrera100#10-20")</li>
@@ -73,7 +74,7 @@ Atributos:
 
 
 
-Métodos:
+**Métodos:**
 
 
 <li>buscarInmueblesenArriendo(): [Public] (estado=="enArriendo" && disponible==True)</li>
@@ -88,7 +89,7 @@ Métodos:
 
 ### Contrato
 
-Atributos:
+**Atributos:**
 
 <li>codigocontrato: [static private, String] ("lHyu23")</li>
 <li>fecha: [private, Date] (10/08/2019)</li>
@@ -98,11 +99,11 @@ Atributos:
 
 
 
-Métodos:
+**Métodos:**
 
 ### Arriendo
 
-Atributos:
+**Atributos:**
 
 <li>fechaInicio: [private, Date] (10/08/2019)</li>
 <li>fechaFin: [private, Date] (10/08/2019)</li>
@@ -110,26 +111,26 @@ Atributos:
 
 
 
-Métodos:
+**Métodos:**
 
 <li>arriendosDisponibles(): (estado=="enArriendo" && disponible==True)</li>
 
 ### Compraventa
 
-Atributos:
+**Atributos:**
 
 <li>medioPago: [private, String] ("tarjetadecredito")</li>
 <li>funcionario: [private, Funcionario] (cedula.funcionario)</li>
 
 
 
-Métodos:
+**Métodos:**
 
 <li>compraVentasdisponibles(): (estado=="enVenta" && disponible==True)</li>
 
 ### Usuario
 
-Atributos:
+**Atributos:**
 
 <li>cedula: [private, Long] (20001010202l)</li>
 <li>nombre: [private, String] ("Juan Perez")</li>
@@ -140,7 +141,7 @@ Atributos:
 
 
 
-Métodos:
+**Métodos:**
 
 <li>login(): (permitir ingresar a perfil de usuario)</li>
 <li>registrarUsuario(): (permitir registrarse en plataforma)</li>
@@ -148,7 +149,7 @@ Métodos:
 ### Administrador
 
 
-Atributos:
+**Atributos:**
 
 <li>cedula: [private, Long] (20001010202l)</li>
 <li>nombre: [private, String] ("Juan Perez")</li>
@@ -159,7 +160,7 @@ Atributos:
 
 
 
-Métodos:
+**Métodos:**
 
 <li>editarCampo(): (permitir editar cualquier campo dentro de la aplicacion)</li>
 <li>agregarCampo(): (permitir agregar cualquier campo dentro de la aplicacion)</li>
@@ -169,7 +170,7 @@ Métodos:
 ### Funcionario
 
 
-Atributos:
+**Atributos:**
 
 <li>cedula: [private, Long] (20001010202l)</li>
 <li>nombre: [private, String] ("Juan Perez")</li>
@@ -178,7 +179,7 @@ Atributos:
 <li>direccion: [private, String] ("carrera23#78-44")</li>
 <li>comision: [private, Long] (1000000l)</li>
 
-Métodos: 
+**Métodos:** 
 
 <li>listarClientes(): (permitir listar clientes)</li>
 <li>listarInmuebles(): (permitir listar inmuebles)</li>
@@ -194,7 +195,7 @@ En esta sección definiremos todas las clases que hacen posible el funcionamient
 
 ##Capa de persistencia
 
-
+En la capa de persistencia se 
 
 # FASE DE IMPLEMENTACIÓN
 
