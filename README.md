@@ -1,16 +1,6 @@
 # GESTOR DE ACTIVIDADES PARA EMPRESA INMOBILIARIA
 
-## INTRODUCCION
-
-Un software para la gestion de actividades, procesos y servicios en una empresa posibilita el rápido crecimiento de esta,  en términos de calidad de servicios, clientes y alta competencia. Poder gestionar todo desde un aplicativo, una página web o un programa tiene ventajas asombrosas para los asociados de la empresa y además el contacto con los clientes por medio de plataformas digitales hace que una organizacion trascienda.
-
-Una empresa inmobiliaria que está posicionada en el mercado, que tiene calidad en sus servicios y acapara clientes pero que no dispone de un sistema adecuado para el manejo de su portafolio pierde capacidad competitiva y dinero. Este caso hipotetico donde una organizacion se dá cuenta que tiene problemas de organizacion, visualizacion y contacto con clientes decide implementar en sus labores diarias un sistema que permita el manejo de clientes, servicios y operaciones por medio de alguna herramienta informática. 
-
-La propuesta que se le realiza al jefe de la inmobiliaria es crear un programa que gestione las actividades desde un aplicativo donde los clientes y trabajadores puedan interactuar de tal manera que se cierren contratos de arrendamiento y compra (o que se lleve a cabo la gran mayoría de trámites por medio del mismo).
-
-La parte inicial es la fase de analisis donde se recojen los requisitos minimos del sistema, se crean modelos verbales de lo que se necesita implementar y se define una ruta a seguir en términos de la infraestructura lógica para llevar a cabo la realización de dicho sistema. La segunda parte es la fase de diseños donde por medio del lenguaje de programación orientada a objetos se consiguen materializar algunas ideas para el proyecto, tales como códigos de programación, lenguajes verbales y funciones que tiene el programa. La ultima parte es la de implementación, esta fase permite usar el programa, ver ejemplos de funcionamiento y funcionalidades.
-
-# FASE DE ANALISIS
+## FASE DE ANALISIS
 
 ## Descripcion del funcionamineto de Inmobiliaria Arrenda-Todo
 
@@ -36,16 +26,14 @@ Es una entidad de referencia ligada directamente al tipo de contrato, esta se da
 
 5) Usuario:
 Esta clase es la que aloja a todos los usuarios del sistema, tiene las funciones básicas de ser usuario, cada usuario debe tener estas características. Deben ser objetos de la clase usuario. Es la que inicia la aplicación por tanto cuenta con opciones de login y registro.
-6) Usuario_Invitado:
-Esta clase es heredada de Usuario, el usuario invitado es aquel que puede ingresar a la página y consultar opciones básicas, esto significa que no tiene permisos de acceso que tendría un usuario registrado.Tiene la opción de registrarse
 
-7) Funcionario:
+6) Funcionario:
 El funcionario es un tipo de Usuario, también heredada de Usuario,tiene opciones avanzadas entre las principales: crear contratos.
 
-8) Administrador:
+7) Administrador:
 El usuario administrador posee todos los permisos de edición, agregar campos etc, también es heredado de Usuario.
 
-9) Cliente:
+8) Cliente:
 Esta clase también es hija de Usuario, posee características propias como por ejemplo ofrecer inmuebles (poner en arriendo/venta o arrendar.
 
 ## Diagrama de clases UML
@@ -58,6 +46,7 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 
 * [DIAGRAMA DE OBJETOS UML](https://drive.google.com/file/d/1pKYtPCc9sOI0QTJsQK1kmGFjtVvKxLdl/view?usp=sharing)
 
+***lOS MÉTODOS QUE ESTÁN ENUMERADOS SON LOS QUE DEBEMOS IMPLEMENTAR EN EL PROGRAMA, YA QUE EL PROFESOR SOLICITA MÍNIMO 10 ESTOS VAN APARTE DE LOS GET Y LOS SET, Y APARTE DE LOS QUE SE HACE AL AUTENTICARSE UN USUARIO***
 
 
 ## Descripción detallada de cada clase de la aplicacion
@@ -66,7 +55,7 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 
 **Atributos:**
 
-<li>codigo_inmueble: [private, Int] (12345)</li>
+<li>codigo_inmueble: [private, String] (F1232)</li>
 <li>estrato: [private, Int] (1 o 2 o 3 o 4 o 5 o 6)</li>
 <li>direccion: [private, String] ("Carrera100#10-20")</li>
 <li>vigilancia: [private, Boolean] (True or False)</li>
@@ -80,19 +69,11 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 <li>ciudad: [private, String] ("Medellín" o "Rionegro" u "otraciudad")</li>
 <li>disponible: [private, Boolean] (True si está enArriendo o enVenta o False si está arrendado o vendido)</li>
 
-
-
 **Métodos:**
 
-
-<li>buscarInmueblesenArriendo(): [Public] (estado=="enArriendo" && disponible==True)</li>
-<li>buscarInmueblesenVenta(): [Public] (estado=="enVenta" && disponible==True)</li>
-<li>verInmueblesDisponibles(): (disponible==True)</li>
-<li>buscarporEstrato(): (estrato==4)</li>
-<li>buscarporNumeroBaños(): (baños==3)</li>
-<li>buscarporNumeroCuartos(): (cuartos==3)</li>
-<li>buscarporArea(): (area==85)</li>
-<li>buscarporTipo(): (tipo=="apartamento")</li>
+<li>1. buscarInmueblesenArriendo(): [Public] (estado=="enArriendo" && disponible==True)</li>
+<li>2. buscarInmueblesenVenta(): [Public] (estado=="enVenta" && disponible==True)</li>
+<li>3. verInmueblesDisponibles(): (disponible==True)</li>
 
 
 ### Contrato
@@ -105,10 +86,6 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 <li>inmueble: [private, Inmueble](codigo.inmueble)</li>
 <li>cliente: [private, Cliente] (cedula.cliente)</li>
 
-
-
-**Métodos:**
-
 ### Arriendo
 
 **Atributos:**
@@ -117,24 +94,12 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 <li>fechaFin: [private, Date] (10/08/2019)</li>
 <li>funcionario: [private, Funcionario] (cedula.funcionario)</li>
 
-
-
-**Métodos:**
-
-<li>arriendosDisponibles(): (estado=="enArriendo" && disponible==True)</li>
-
 ### Compraventa
 
 **Atributos:**
 
 <li>medioPago: [private, String] ("tarjetadecredito")</li>
 <li>funcionario: [private, Funcionario] (cedula.funcionario)</li>
-
-
-
-**Métodos:**
-
-<li>compraVentasdisponibles(): (estado=="enVenta" && disponible==True)</li>
 
 ### Usuario
 
@@ -147,52 +112,39 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 <li>direccion: [private, String] ("carrera23#78-44")</li>
 
 
-
-
 **Métodos:**
 
-<li>login(): (permitir ingresar a perfil de usuario)</li>
-<li>registrarUsuario(): (permitir registrarse en plataforma)</li>
+<li>login():PENDIENTE</li>
+<li>registrarUsuario(): PENDIENTE</li>
+PENDIENTES LOS QUE SE DEFINAN CON MENU CONSOLA
 
 ### Administrador
 
-
-**Atributos:**
-
-<li>cedula: [private, Long] (20001010202l)</li>
-<li>nombre: [private, String] ("Juan Perez")</li>
-<li>correo: [private, String] ("juanperez@correo.co")</li>
-<li>contraseña: [private, String]("password")</li>
-<li>direccion: [private, String] ("carrera23#78-44")</li>
-
-
-
-
 **Métodos:**
 
-<li>editarCampo(): (permitir editar cualquier campo dentro de la aplicacion)</li>
-<li>agregarCampo(): (permitir agregar cualquier campo dentro de la aplicacion)</li>
-<li>eliminarCampo(): (permitir eliminar cualquier campo dentro de la aplicacion)</li>
-<li>agregarFuncionario(): (el administador es el único que agrega funcionarios)</li>
+<li>4. agregarFuncionario(): (el administador es el único que agrega funcionarios)</li>
+<li>5 .agregarFuncionario(): (el administador es el único que agrega administradores)</li>
+PENDIENTES LOS QUE SE DEFINAN CON MENU CONSOLA
+
 
 ### Funcionario
 
-
 **Atributos:**
 
-<li>cedula: [private, Long] (20001010202l)</li>
-<li>nombre: [private, String] ("Juan Perez")</li>
-<li>correo: [private, String] ("juanperez@correo.co")</li>
-<li>contraseña: [private, String]("password")</li>
-<li>direccion: [private, String] ("carrera23#78-44")</li>
 <li>comision: [private, Long] (1000000l)</li>
 
 **Métodos:** 
 
-<li>listarClientes(): (permitir listar clientes)</li>
-<li>listarInmuebles(): (permitir listar inmuebles)</li>
-<li>agregarContrato(): (permitir agregar contrato)</li>
-<li>agregarCliente(): (permitir agregar cliente)</li>
+<li>6. listarClientes(): (permitir listar clientes)</li>
+<li>7. listarInmuebles(): (permitir listar inmuebles)</li>
+<li>8. agregarContrato(): (permitir agregar contrato)</li>
+<li>9. agregarCliente(): (permitir agregar cliente)</li>
+
+### Cliente
+
+**Métodos**
+
+<li>10. ofrecerInmueble(): (permitir agregar cliente)</li>
 
 
 # FASE DE DISEÑO
