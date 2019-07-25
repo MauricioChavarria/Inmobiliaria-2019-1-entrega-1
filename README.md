@@ -3,15 +3,15 @@
 ## 11 Funcionalidades (estas son distintas de los get, set, ejecutar, ingreso)
 
 <li>Funcionalidad 1: buscarInmueblesenArriendo() --> Lo puede hacer cualquiera</li>
-<li>Funcionalidad 2: buscarInmueblesenventa() --> Lo puede hacer cualquiera</li>
-<li>Funcionalidad 4: agregarFuncionario() --> Lo puede hacer un administrador</li>
-<li>Funcionalidad 5: listarClientes() --> Lo puede hacer un funcionario y un administrador</li>
-<li>Funcionalidad 6: listarInmuebles() --> Lo puede hacer un funcionario y un administrador</li>
-<li>Funcionalidad 7: agregarContrato() --> Lo puede hacer un funcionario</li>
-<li>Funcionalidad 8: agregarCliente() --> Lo puede hacer un funcionario, un administrador y un cliente</li>
-<li>Funcionalidad 9: ofrecerInmueble() --> Lo puede hacer un cliente</li>
-<li>Funcionalidad 10: listarAdministradores() --> Lo puede hacer un administrador</li>
-<li>Funcionalidad 11: listarfuncionarios() --> lo puede hacer un administrador</li>
+<li>Funcionalidad 2: buscarInmueblesenCompraventa() --> Lo puede hacer cualquiera</li>
+<li>Funcionalidad 3: agregarFuncionario() --> Lo puede hacer un administrador</li>
+<li>Funcionalidad 4: listarClientes() --> Lo puede hacer un funcionario y un administrador</li>
+<li>Funcionalidad 5: listarInmuebles() --> Lo puede hacer un funcionario y un administrador</li>
+<li>Funcionalidad 6: agregarContrato() --> Lo puede hacer un funcionario</li>
+<li>Funcionalidad 7: agregarCliente() --> Lo puede hacer un funcionario, un administrador</li>
+<li>Funcionalidad 8: agregarInmueble() --> Lo puede hacer un cliente</li>
+<li>Funcionalidad 9: listarAdministradores() --> Lo puede hacer un administrador</li>
+<li>Funcionalidad 10: listarfuncionarios() --> lo puede hacer un administrador</li>
 
 ## FASE DE ANALISIS
 
@@ -53,7 +53,7 @@ Esta clase también es hija de Usuario, posee características propias como por 
 
 Esta representacion gráfica ayudará a entender el modelo verbal anteriormente descrito, en este mismo se pueden ver las relaciones que existe entre clases, la cardinalidad y atributos/métodos.
 
-* [DIAGRAMA DE CLASES UML](https://drive.google.com/open?id=1Pcddm9otUvvFZf18R64ALlCXV5us9vxP).
+* [DIAGRAMA DE CLASES UML](https://drive.google.com/file/d/1pWX2iONvucIte_w3KIDglkkEh1zySN8B/view?ts=5d3a2650).
 
 ## Diagrama de objetos UML
 
