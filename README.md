@@ -1,6 +1,6 @@
 # GESTOR DE ACTIVIDADES PARA EMPRESA INMOBILIARIA
 
-## 11 Funcionalidades (estas son distintas de los get, set, ejecutar, ingreso)
+## 10 Funcionalidades (estas son distintas de los get, set, ejecutar, ingreso)
 
 <li>Funcionalidad 1: buscarInmueblesenArriendo() --> Lo puede hacer cualquiera</li>
 <li>Funcionalidad 2: buscarInmueblesenCompraventa() --> Lo puede hacer cualquiera</li>
