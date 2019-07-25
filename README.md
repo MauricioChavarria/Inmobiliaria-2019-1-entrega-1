@@ -1,5 +1,18 @@
 # GESTOR DE ACTIVIDADES PARA EMPRESA INMOBILIARIA
 
+## 10 Funcionalidades (estas son distintas de los get, set, ejecutar, ingreso)
+
+<li>Funcionalidad 1: buscarInmueblesenArriendo() --> Lo puede hacer cualquiera</li>
+<li>Funcionalidad 2: buscarInmueblesenventa() --> Lo puede hacer cualquiera</li>
+<li>Funcionalidad 4: agregarFuncionario() --> Lo puede hacer un administrador</li>
+<li>Funcionalidad 5: listarClientes() --> Lo puede hacer un funcionario y un administrador</li>
+<li>Funcionalidad 6: listarInmuebles() --> Lo puede hacer un funcionario y un administrador</li>
+<li>Funcionalidad 7: agregarContrato() --> Lo puede hacer un funcionario</li>
+<li>Funcionalidad 8: agregarCliente() --> Lo puede hacer un funcionario, un administrador y un cliente</li>
+<li>Funcionalidad 9: ofrecerInmueble() --> Lo puede hacer un cliente</li>
+<li>Funcionalidad 10: listarAdministradores() --> Lo puede hacer un administrador</li>
+<li>Funcionalidad 11: listarfuncionarios() --> lo puede hacer un administrador</li>
+
 ## FASE DE ANALISIS
 
 ## Descripcion del funcionamineto de Inmobiliaria Arrenda-Todo
@@ -73,7 +86,6 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 
 <li>1. buscarInmueblesenArriendo(): [Public] (estado=="enArriendo" && disponible==True)</li>
 <li>2. buscarInmueblesenVenta(): [Public] (estado=="enVenta" && disponible==True)</li>
-<li>3. verInmueblesDisponibles(): (disponible==True)</li>
 
 
 ### Contrato
@@ -114,17 +126,16 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 
 **Métodos:**
 
-<li>login():PENDIENTE</li>
-<li>registrarUsuario(): PENDIENTE</li>
-PENDIENTES LOS QUE SE DEFINAN CON MENU CONSOLA
+
 
 ### Administrador
 
 **Métodos:**
 
-<li>4. agregarFuncionario(): (el administador es el único que agrega funcionarios)</li>
-<li>5 .agregarFuncionario(): (el administador es el único que agrega administradores)</li>
-PENDIENTES LOS QUE SE DEFINAN CON MENU CONSOLA
+<li>3. agregarFuncionario()</li>
+<li>4. agregarAdministrador()</li>
+<li>5. listarFuncionarios()</li>
+<li>6. listarAdministradores()</li>
 
 
 ### Funcionario
@@ -135,16 +146,16 @@ PENDIENTES LOS QUE SE DEFINAN CON MENU CONSOLA
 
 **Métodos:** 
 
-<li>6. listarClientes(): (permitir listar clientes)</li>
-<li>7. listarInmuebles(): (permitir listar inmuebles)</li>
-<li>8. agregarContrato(): (permitir agregar contrato)</li>
-<li>9. agregarCliente(): (permitir agregar cliente)</li>
+<li>7. listarClientes()</li>
+<li>8. listarInmuebles()</li>
+<li>9. agregarContrato()</li>
+<li>10. agregarCliente()</li>
 
 ### Cliente
 
 **Métodos**
 
-<li>10. ofrecerInmueble(): (permitir agregar cliente)</li>
+<li>10. ofrecerInmueble()</li>
 
 
 # FASE DE DISEÑO
