@@ -1,9 +1,11 @@
-package gestorAplicacion;
+package gestorAplicacion.paqueteServicios;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+
+import gestorAplicacion.paqueteUsuarios.Cliente;
 
 public class Compraventa extends Contrato {
 

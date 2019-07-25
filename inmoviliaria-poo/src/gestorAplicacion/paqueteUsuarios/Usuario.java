@@ -1,20 +1,26 @@
-package gestorAplicacion;
+package gestorAplicacion.paqueteUsuarios;
+
+import java.util.ArrayList;
+
+import uiMain.*;
 
 //import java.util.ArrayList;
 
-public class Usuario {
+public abstract class Usuario {
 	private int cedula;
 	private String nombre;
-    	private String correo;
-    	private String contrasena;
-    	private String direccion;
+	private String correo;
+	private String contrasena;
+	private String direccion;
+	public ArrayList<OpcionDeMenu> options = new ArrayList<OpcionDeMenu> ();
 	
-	public Usuario(int cedula, String nombre, String correo, String contrasena, String direccion) {
+	public Usuario(int cedula, String nombre, String correo, String contrasena, String direccion, String tipoUsuario) {
 		this.cedula=cedula;
 		this.nombre=nombre;
 		this.correo=correo;
 		this.contrasena=contrasena;
 		this.direccion=direccion;
+		tipoUsuario = "3";
 	}
 
 	public int getCedula() {

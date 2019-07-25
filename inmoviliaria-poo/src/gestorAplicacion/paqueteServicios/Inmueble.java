@@ -1,4 +1,4 @@
-package gestorAplicacion;
+package gestorAplicacion.paqueteServicios;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;

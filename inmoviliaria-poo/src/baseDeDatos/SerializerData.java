@@ -15,7 +15,7 @@ public class SerializerData {
 	 * @param args
 	 */
 	static LinkedList<Object> objetos = new LinkedList<Object>();
-	static String nombreArchivo = System.getProperty("user.dir")+"/src/tmp/dataSerialized";
+	static String nombreArchivo = System.getProperty("user.dir")+"/src/temp/dataSerialized";
 
 	
 	public SerializerData(){

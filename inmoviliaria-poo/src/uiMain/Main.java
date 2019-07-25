@@ -2,12 +2,12 @@ package uiMain;
 
 import java.io.IOException;
 
-import gestorAplicacion.Usuario;
+import gestorAplicacion.paqueteUsuarios.Usuario;
 import baseDeDatos.*;
 
 class Main {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args)  {
 		
 		//Obtener data y cargar
 		
@@ -15,10 +15,11 @@ class Main {
 
 		try{
 			data.serializeDataIn();
-		}catch(IOException e){
+			
+		}catch(IOException | ClassNotFoundException e){
 			try{
 				data.serializeDataOut();
-			}catch(IOException e){
+			}catch(IOException f){
 
 			}
 		}
