@@ -1,9 +1,9 @@
 package gestorAplicacion.paqueteServicios;
+
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
+
 public class Contrato {
 
     private int codigo;
@@ -65,89 +65,5 @@ public class Contrato {
 
     public void setDisponible(boolean disponible) {
         this.disponible = disponible;
-    }
-
-    //busquedas------------------------------------------------------------------------------------
-    
-    //por codigo
-    public static Contrato buscarContrato(HashMap<Integer, Contrato> contratos, Integer codigo) {
-        Contrato encontrado = contratos.get(codigo);
-        return encontrado;
-    }
-
-    //por ciudad
-    public static LinkedList<Contrato> buscarPorCiudad(HashMap<Integer, Contrato> contratos, String ciudad) {
-        LinkedList<Contrato> todos_los_contratos = new LinkedList<Contrato>();
-        for (Contrato contra : contratos.values()) {
-            if (contra.getInmueble().getCiudad().equalsIgnoreCase(ciudad)) {
-                todos_los_contratos.add(contra);
-            }
-        }
-        if (todos_los_contratos.isEmpty()) {
-            return null;
-        }
-        return todos_los_contratos;
-    }
-
-    //por estrato
-    public static LinkedList<Contrato> buscarPorEstrato(HashMap<Integer, Contrato> contratos, int estrato) {
-        LinkedList<Contrato> todos_los_contratos = new LinkedList<Contrato>();
-        for (Contrato contra : contratos.values()) {
-            if (contra.getInmueble().getEstrato() == estrato) {
-                todos_los_contratos.add(contra);
-            }
-        }
-        if (todos_los_contratos.isEmpty()) {
-            return null;
-        }
-        return todos_los_contratos;
-    }
-    
-    //por numero de banos
-    public static LinkedList<Contrato> buscarPorNumeroDeBanos(HashMap<Integer, Contrato> contratos, int banosini, int banostop) {
-        LinkedList<Contrato> todos_los_contratos = new LinkedList<Contrato>();
-        int bano;
-        for (Contrato contra : contratos.values()) {
-            bano = contra.getInmueble().getBanos();
-            if ((bano>=banosini)&&(bano<=banostop)) {
-                todos_los_contratos.add(contra);
-            }
-        }
-        if (todos_los_contratos.isEmpty()) {
-            return null;
-        }
-        return todos_los_contratos;
-    }
-    
-    //por numero de cuartos
-    public static LinkedList<Contrato> buscarPorNumeroDeCuartos(HashMap<Integer, Contrato> contratos, int cuartosini, int cuartostop) {
-        LinkedList<Contrato> todos_los_contratos = new LinkedList<Contrato>();
-        int c;
-        for (Contrato contra : contratos.values()) {
-            c = contra.getInmueble().getCuartos();
-            if ((c>=cuartosini)&&(c<=cuartostop)) {
-                todos_los_contratos.add(contra);
-            }
-        }
-        if (todos_los_contratos.isEmpty()) {
-            return null;
-        }
-        return todos_los_contratos;
-    }
-    
-    //por area
-    public static LinkedList<Contrato> buscarPorArea(HashMap<Integer, Contrato> contratos, int areaini, int areatop) {
-        LinkedList<Contrato> todos_los_contratos = new LinkedList<Contrato>();
-        int area;
-        for (Contrato contra : contratos.values()) {
-            area = contra.getInmueble().getArea();
-            if ((area>=areaini)&&(area<=areatop)) {
-                todos_los_contratos.add(contra);
-            }
-        }
-        if (todos_los_contratos.isEmpty()) {
-            return null;
-        }
-        return todos_los_contratos;
     }
 }
