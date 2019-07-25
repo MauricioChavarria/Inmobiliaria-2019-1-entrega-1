@@ -6,7 +6,8 @@ import java.util.List;
 
 public class Inmueble {
     
-    private int predial;
+    private String codigo_Inmueble;
+	private int predial;
     private int estrato;
     private boolean vigilancia;
     private boolean ascensor;
@@ -22,8 +23,9 @@ public class Inmueble {
     
     public static List<Inmueble> inmuebles = new ArrayList<Inmueble>();
 
-    public Inmueble(int predial, int estrato, boolean vigilancia, boolean ascensor, int area, int banos, int cuartos, String tipo, Compraventa compraventa, String ciudad, int antiguedad, boolean disponible) {
-        this.predial = predial;
+    public Inmueble(String codigo_Inmueble,int predial, int estrato, boolean vigilancia, boolean ascensor, int area, int banos, int cuartos, String tipo, Compraventa compraventa, String ciudad, int antiguedad, boolean disponible) {
+        this.codigo_Inmueble=codigo_Inmueble;
+    	this.predial = predial;
         this.estrato = estrato;
         this.vigilancia = vigilancia;
         this.ascensor = ascensor;
@@ -40,7 +42,15 @@ public class Inmueble {
 
     @Override
     public String toString() {
-        return "Inmueble{" + "estrato=" + estrato + ", vigilancia=" + vigilancia + ", ascensor=" + ascensor + ", area=" + area + ", banos=" + banos + ", cuartos=" + cuartos + ", tipo=" + tipo + ", arriendo=" + arriendo + ", compraventa=" + compraventa + ", ciudad=" + ciudad + ", antiguedad=" + antiguedad + ", disponible=" + disponible + '}';
+        return "Inmueble{"+"codigo Inmueble ="+ codigo_Inmueble + ", estrato=" + estrato + ", vigilancia=" + vigilancia + ", ascensor=" + ascensor + ", area=" + area + ", banos=" + banos + ", cuartos=" + cuartos + ", tipo=" + tipo + ", arriendo=" + arriendo + ", compraventa=" + compraventa + ", ciudad=" + ciudad + ", antiguedad=" + antiguedad + ", disponible=" + disponible + '}';
+    }
+    
+    public String getcodigo_Inmueble() {
+    	return codigo_Inmueble;
+    }
+    
+    public void setcodigo_Inmueble(String codigo_Inmueble ) {
+    	this.codigo_Inmueble = codigo_Inmueble;
     }
 
     public int getPredial() {
@@ -284,22 +294,6 @@ public class Inmueble {
         return inmuebles_encontrados;
     }
 
-    //por area
-    public static LinkedList<Inmueble> buscarPorArea(LinkedList<Inmueble> todos_inmuebles, int areaini, int areatop) {
-        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<Inmueble>();
-        int area;
-        for (Inmueble iterado : todos_inmuebles) {
-            area = iterado.getArea();
-
-            if ((area <= areatop) && (area >= areaini)) {
-                inmuebles_encontrados.add(iterado);
-            }
-        }
-        if (inmuebles_encontrados.isEmpty()) {
-            return null;
-        }
-        return inmuebles_encontrados;
-
-    }
+    
 
 }
