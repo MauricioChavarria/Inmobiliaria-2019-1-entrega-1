@@ -1,8 +1,19 @@
 # GESTOR DE ACTIVIDADES PARA EMPRESA INMOBILIARIA
 
-## INTRODUCCION
+## 10 Funcionalidades (estas son distintas de los get, set, ejecutar, ingreso)
 
-# FASE DE ANALISIS
+<li>Funcionalidad 1: buscarInmueblesenArriendo() --> Lo puede hacer cualquiera</li>
+<li>Funcionalidad 2: buscarInmueblesenCompraventa() --> Lo puede hacer cualquiera</li>
+<li>Funcionalidad 3: agregarFuncionario() --> Lo puede hacer un administrador</li>
+<li>Funcionalidad 4: listarClientes() --> Lo puede hacer un funcionario y un administrador</li>
+<li>Funcionalidad 5: listarInmuebles() --> Lo puede hacer un funcionario y un administrador</li>
+<li>Funcionalidad 6: agregarContrato() --> Lo puede hacer un funcionario</li>
+<li>Funcionalidad 7: agregarCliente() --> Lo puede hacer un funcionario, un administrador</li>
+<li>Funcionalidad 8: agregarInmueble() --> Lo puede hacer un cliente</li>
+<li>Funcionalidad 9: listarAdministradores() --> Lo puede hacer un administrador</li>
+<li>Funcionalidad 10: listarfuncionarios() --> lo puede hacer un administrador</li>
+
+## FASE DE ANALISIS
 
 ## Descripcion del funcionamineto de Inmobiliaria Arrenda-Todo
 
@@ -12,7 +23,7 @@ Todos los clientes deben asistir a la oficina ubicada en Belén-Rosales para fir
 Los asesores deben tener un número de clientes, un cliente debe ser atendido por un asesor que es el mismo que lleva el contrato, estableciendo la relación entre vendedor/comprador o arrendador/arrendatario. Eso significa que cuando hay un cliente interesado en vender/arrendar, el asesor toma el caso y busca comprador/arrendatario y el mismo hace el contrato y lleva el seguimiento.
 
 
-## Modelo verbal de las clases asociadas de la página
+## Modelo verbal de las clases asociadas del programa
 
 1) Inmueble:
 un inmueble es una representación sobre la cual se hace o ejecuta un contrato, por tanto, siempre debe existir uno que respalde dicho contrato. Los inmuebles solo son ofrecidos por los clientes que desean poner en venta o arriendo su inmueble, un inmueble tiene 1 dueño (cliente vendedor/arrendador). Debe estar en uno de dos estados: disponible (venta o arriendo) o no disponible (vendido o arrendado).
@@ -28,28 +39,27 @@ Es una entidad de referencia ligada directamente al tipo de contrato, esta se da
 
 5) Usuario:
 Esta clase es la que aloja a todos los usuarios del sistema, tiene las funciones básicas de ser usuario, cada usuario debe tener estas características. Deben ser objetos de la clase usuario. Es la que inicia la aplicación por tanto cuenta con opciones de login y registro.
-6) Usuario_Invitado:
-Esta clase es heredada de Usuario, el usuario invitado es aquel que puede ingresar a la página y consultar opciones básicas, esto significa que no tiene permisos de acceso que tendría un usuario registrado.Tiene la opción de registrarse
 
-7) Funcionario:
+6) Funcionario:
 El funcionario es un tipo de Usuario, también heredada de Usuario,tiene opciones avanzadas entre las principales: crear contratos.
 
-8) Administrador:
+7) Administrador:
 El usuario administrador posee todos los permisos de edición, agregar campos etc, también es heredado de Usuario.
 
-9) Cliente:
+8) Cliente:
 Esta clase también es hija de Usuario, posee características propias como por ejemplo ofrecer inmuebles (poner en arriendo/venta o arrendar.
 
 ## Diagrama de clases UML
 
 Esta representacion gráfica ayudará a entender el modelo verbal anteriormente descrito, en este mismo se pueden ver las relaciones que existe entre clases, la cardinalidad y atributos/métodos.
 
-* [DIAGRAMA DE CLASES UML](https://drive.google.com/open?id=1Pcddm9otUvvFZf18R64ALlCXV5us9vxP).
+* [DIAGRAMA DE CLASES UML](https://drive.google.com/file/d/1pWX2iONvucIte_w3KIDglkkEh1zySN8B/view?ts=5d3a2650).
 
 ## Diagrama de objetos UML
 
-* [DIAGRAMA DE OBJETOS UML] : AQUÍ VA EL LINK
+* [DIAGRAMA DE OBJETOS UML](https://drive.google.com/file/d/1pKYtPCc9sOI0QTJsQK1kmGFjtVvKxLdl/view?usp=sharing)
 
+***lOS MÉTODOS QUE ESTÁN ENUMERADOS SON LOS QUE DEBEMOS IMPLEMENTAR EN EL PROGRAMA, YA QUE EL PROFESOR SOLICITA MÍNIMO 10 ESTOS VAN APARTE DE LOS GET Y LOS SET, Y APARTE DE LOS QUE SE HACE AL AUTENTICARSE UN USUARIO***
 
 
 ## Descripción detallada de cada clase de la aplicacion
@@ -58,7 +68,7 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 
 **Atributos:**
 
-<li>codigo_inmueble: [private, Int] (12345)</li>
+<li>codigo_inmueble: [private, String] (F1232)</li>
 <li>estrato: [private, Int] (1 o 2 o 3 o 4 o 5 o 6)</li>
 <li>direccion: [private, String] ("Carrera100#10-20")</li>
 <li>vigilancia: [private, Boolean] (True or False)</li>
@@ -72,19 +82,10 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 <li>ciudad: [private, String] ("Medellín" o "Rionegro" u "otraciudad")</li>
 <li>disponible: [private, Boolean] (True si está enArriendo o enVenta o False si está arrendado o vendido)</li>
 
-
-
 **Métodos:**
 
-
-<li>buscarInmueblesenArriendo(): [Public] (estado=="enArriendo" && disponible==True)</li>
-<li>buscarInmueblesenVenta(): [Public] (estado=="enVenta" && disponible==True)</li>
-<li>verInmueblesDisponibles(): (disponible==True)</li>
-<li>buscarporEstrato(): (estrato==4)</li>
-<li>buscarporNumeroBaños(): (baños==3)</li>
-<li>buscarporNumeroCuartos(): (cuartos==3)</li>
-<li>buscarporArea(): (area==85)</li>
-<li>buscarporTipo(): (tipo=="apartamento")</li>
+<li>1. buscarInmueblesenArriendo(): [Public] (estado=="enArriendo" && disponible==True)</li>
+<li>2. buscarInmueblesenVenta(): [Public] (estado=="enVenta" && disponible==True)</li>
 
 
 ### Contrato
@@ -97,10 +98,6 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 <li>inmueble: [private, Inmueble](codigo.inmueble)</li>
 <li>cliente: [private, Cliente] (cedula.cliente)</li>
 
-
-
-**Métodos:**
-
 ### Arriendo
 
 **Atributos:**
@@ -109,24 +106,12 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 <li>fechaFin: [private, Date] (10/08/2019)</li>
 <li>funcionario: [private, Funcionario] (cedula.funcionario)</li>
 
-
-
-**Métodos:**
-
-<li>arriendosDisponibles(): (estado=="enArriendo" && disponible==True)</li>
-
 ### Compraventa
 
 **Atributos:**
 
 <li>medioPago: [private, String] ("tarjetadecredito")</li>
 <li>funcionario: [private, Funcionario] (cedula.funcionario)</li>
-
-
-
-**Métodos:**
-
-<li>compraVentasdisponibles(): (estado=="enVenta" && disponible==True)</li>
 
 ### Usuario
 
@@ -139,52 +124,38 @@ Esta representacion gráfica ayudará a entender el modelo verbal anteriormente 
 <li>direccion: [private, String] ("carrera23#78-44")</li>
 
 
-
-
 **Métodos:**
 
-<li>login(): (permitir ingresar a perfil de usuario)</li>
-<li>registrarUsuario(): (permitir registrarse en plataforma)</li>
+
 
 ### Administrador
 
-
-**Atributos:**
-
-<li>cedula: [private, Long] (20001010202l)</li>
-<li>nombre: [private, String] ("Juan Perez")</li>
-<li>correo: [private, String] ("juanperez@correo.co")</li>
-<li>contraseña: [private, String]("password")</li>
-<li>direccion: [private, String] ("carrera23#78-44")</li>
-
-
-
-
 **Métodos:**
 
-<li>editarCampo(): (permitir editar cualquier campo dentro de la aplicacion)</li>
-<li>agregarCampo(): (permitir agregar cualquier campo dentro de la aplicacion)</li>
-<li>eliminarCampo(): (permitir eliminar cualquier campo dentro de la aplicacion)</li>
-<li>agregarFuncionario(): (el administador es el único que agrega funcionarios)</li>
+<li>3. agregarFuncionario()</li>
+<li>4. agregarAdministrador()</li>
+<li>5. listarFuncionarios()</li>
+<li>6. listarAdministradores()</li>
+
 
 ### Funcionario
 
-
 **Atributos:**
 
-<li>cedula: [private, Long] (20001010202l)</li>
-<li>nombre: [private, String] ("Juan Perez")</li>
-<li>correo: [private, String] ("juanperez@correo.co")</li>
-<li>contraseña: [private, String]("password")</li>
-<li>direccion: [private, String] ("carrera23#78-44")</li>
 <li>comision: [private, Long] (1000000l)</li>
 
 **Métodos:** 
 
-<li>listarClientes(): (permitir listar clientes)</li>
-<li>listarInmuebles(): (permitir listar inmuebles)</li>
-<li>agregarContrato(): (permitir agregar contrato)</li>
-<li>agregarCliente(): (permitir agregar cliente)</li>
+<li>7. listarClientes()</li>
+<li>8. listarInmuebles()</li>
+<li>9. agregarContrato()</li>
+<li>10. agregarCliente()</li>
+
+### Cliente
+
+**Métodos**
+
+<li>10. ofrecerInmueble()</li>
 
 
 # FASE DE DISEÑO
@@ -200,7 +171,7 @@ En la capa de persistencia se encuentran los estados de todos los objetos instan
 
 Dentro de la capa de persistencia existen dos paquetes **Basedatos** y **/temp**, el primero aloja todas las clases que permiten crear los archivos de texto, manipularlos, etc. Y dentro del paquete */temp* se guardan los archivos de texto.
 
-### Clase Data o datos
+### Serial
 
 'aquí va el código de la clase datos'
 
@@ -1008,10 +979,25 @@ public class Funcionario extends Usuario {
     }
 }
 ```
+## Capa de Interfaz de usuario
+
+En la capa de interfaz de usuario lo que se tiene son las clases que permiten a un usuario interactual con el programa, ya que unas clases con los estados de los objetos y otras que permiten crear objetos quedan en el aire sin algun tipo de interacción. Por esa razón es necesario por el momento implementar una capa que al momento de ejecutar el programa se pueda acceder a el, ingresar opciones y navegar. En esta primera entrega es suficiente un menú generico por consola, ya que la implementación de interfaces gráficas es para otro nivel en la programacion orientada a objetos.
+
+El paquete donde se encuentran las clases que realizan esta labor se denomina **uiMain**
+y las clases son las siguientes:
+
+### Clase Main o clase principal
+```Aqui va el codigo```
+
+### Clase OpciondeMenu
+```Aqui va el codigo```
+
+### Clase Menudeconsola
+```Aqui va el codigo```
+
+
 # FASE DE IMPLEMENTACIÓN
 
-# CONCLUSIONES
+En la fase de implementación se muestra el funcionamiento del programa, puesto que al ser un programa en un muy bajo nivel es necesario ser traducido para que un lector pueda entender de que trata el mismo, además de explicar de forma detallada los procesos que se realizaron en cada uno de los códigos a groso modo. 
 
-# ANEXOS
 
-# BIBLIOGRAFÍA
