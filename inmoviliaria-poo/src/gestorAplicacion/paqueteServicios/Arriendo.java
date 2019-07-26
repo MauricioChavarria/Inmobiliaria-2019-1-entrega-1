@@ -1,16 +1,21 @@
 package gestorAplicacion.paqueteServicios;
 
+import java.util.ArrayList;
 import java.util.Date;
-import gestorAplicacion.paqueteServicios.Contrato;
+import java.util.List;
+
 import gestorAplicacion.paqueteServicios.Inmueble;
 
 public class Arriendo extends Contrato{
   
   private Date fechafin;
+  public static List<Arriendo> arriendos = new ArrayList<Arriendo>();
   
   public Arriendo(int codigo,Date fecha,double valor,Inmueble inmueble,boolean disponible, String medioPago, Date fechafin) {
       super(codigo,fecha,valor,inmueble,disponible);
       this.fechafin = fechafin;
+      
+      arriendos.add(this);
   }
 
   @Override

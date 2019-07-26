@@ -23,7 +23,13 @@ public class SerializerData {
 	public SerializerData() {
 		try{
 			serializeDataIn();
-			Administrador.admins = (List<Administrador>) this.objetos.get(0);
+		   Administrador.admins = (List<Administrador>) objetos.get(0);
+		   Cliente.clientes = (List<Cliente>) objetos.get(1);
+		   Funcionario.funcionarios = (List<Funcionario>) objetos.get(2);
+		   Inmueble.inmuebles = (List<Inmueble>) objetos.get(3);
+		   Arriendo.arriendos = (List<Arriendo>) objetos.get(4);
+		   Compraventa.compraventas = (List<Compraventa>) objetos.get(5);
+		   Contrato.contratos = (List<Contrato>) objetos.get(6);
 		}catch(ClassNotFoundException | IOException e){
 			System.out.println("No se puedo inicializar el programa");
 		}

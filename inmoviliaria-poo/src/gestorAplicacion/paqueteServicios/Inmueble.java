@@ -38,6 +38,8 @@ public class Inmueble {
         this.ciudad = ciudad;
         this.antiguedad = antiguedad;
         this.disponible = disponible;
+        
+        inmuebles.add(this);
     }
 
     @Override

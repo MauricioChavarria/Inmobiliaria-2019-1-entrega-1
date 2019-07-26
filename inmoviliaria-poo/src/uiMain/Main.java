@@ -12,7 +12,7 @@ class Main {
 		//Obtener data y cargar
 		
 		SerializerData data = new SerializerData();
-		System.out.print("q");
+		
 		try{
 			data.serializeDataIn();
 			

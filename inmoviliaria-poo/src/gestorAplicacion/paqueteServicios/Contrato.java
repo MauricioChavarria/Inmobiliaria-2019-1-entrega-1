@@ -21,6 +21,8 @@ public class Contrato {
         this.inmueble =inmueble;
         this.valor=valor;
         this.disponible=disponible;
+        
+        contratos.add(this);
     }
     @Override
     public String toString() {
