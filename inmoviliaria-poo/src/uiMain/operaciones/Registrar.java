@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Scanner;
 
 import gestorAplicacion.paqueteUsuarios.Administrador;
+import gestorAplicacion.paqueteUsuarios.Cliente;
+import gestorAplicacion.paqueteUsuarios.Funcionario;
 import gestorAplicacion.paqueteUsuarios.Usuario;
 import uiMain.MenuDeConsola;
 import uiMain.OpcionDeMenu;
@@ -20,18 +22,38 @@ public class Registrar extends OpcionDeMenu{
 		int cedula = leer.nextInt();
 		System.out.print("Ingrese nombre: ");
 		String nombre = leer.next();
+		System.out.print("Ingrese correo: ");
+		String correo = leer.next();
+		System.out.print("Ingrese contrasena: ");
+		String contrasena = leer.next();
+		System.out.print("Ingrese direccion: ");
+		String direccion = leer.next();
 		
+		boolean encontrado=false;
 		//Buscar en cada uno de los tipos de usuarios
-		Usuario user = Administrador.login(cedula,password);
-		if(user != null){
-			usuarioEntontrado = true;
-			user.setLogin(true);
-
-			List<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
-			opciones.add(user);
-			
-			MenuDeConsola menu = new MenuDeConsola(opciones);
-			menu.mostrarMenu();
+		if(encontrado=false) {
+			for(int i=0; i<=Administrador.admins.size(); i++) {
+				if (cedula == Administrador.admins.get(i).getCedula()) {
+					System.out.println("Este Usuario ya existe");
+					encontrado=true;
+				}
+			}
+		}
+		if(encontrado=false) {
+			for(int i=0; i<=Funcionario.funcionarios.size(); i++) {
+				if (cedula == Funcionario.funcionarios.get(i).getCedula()) {
+					System.out.println("Este Usuario ya existe");
+					encontrado=true;
+				}
+			}
+		}
+		if(encontrado=false) {
+			for(int i=0; i<=Cliente.clientes.size(); i++) {
+				if (cedula == Cliente.clientes.get(i).getCedula()) {
+					System.out.println("Este Usuario ya existe");
+					encontrado=true;
+				}
+			}
 		}
 	}
 

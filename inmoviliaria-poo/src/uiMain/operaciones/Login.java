@@ -32,7 +32,7 @@ public class Login extends OpcionDeMenu{
 			
 			MenuDeConsola menu = new MenuDeConsola(opciones);
 			menu.mostrarMenu();
-		}else System.out.println("El usuario no existe");
+		}
 	}
 
 	@Override
