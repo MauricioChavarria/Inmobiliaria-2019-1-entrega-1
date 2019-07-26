@@ -1,4 +1,6 @@
-package uiMain.operations;
+
+
+import static gestorAplicacion.paqueteUsuarios.Administrador.login;
 
 import java.util.HashMap;
 import java.util.Scanner;
@@ -24,16 +26,18 @@ public class Login extends OpcionDeMenu{
 		
 		//Buscar en cada uno de los tipos de usuarios
 		for(Administrador admin: Administrador.admins){
-			if(admin.login(cedula,password) != null){
+			if(login(cedula,password) != null){
+				admin.setLogin(true);
+
 				HashMap<String,OpcionDeMenu> subopt = new HashMap<String,OpcionDeMenu>();
-				subopt.put("1", )
+				subopt.put("1", admin);
 				/* 
 					NOTA: Desarrollar la clase que instancia de administrador y de opcion menu
 					para que esta sea una operacion en el menu de consola
 				
 				*/
 
-				MenuDeConsola menu = new Menu
+				
 			}
 		}
 		

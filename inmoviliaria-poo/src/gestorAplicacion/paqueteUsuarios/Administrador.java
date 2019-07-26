@@ -53,7 +53,7 @@ public class Administrador extends Usuario  {
         return admins.get(cc);
 	}		
 	
-	public static Administrador login(int cedula, String contrasena, ArrayList<Administrador> admins) {
+	public static Administrador login(int cedula, String contrasena) {
         
         for(Administrador a: admins){
             if(a.getCedula()== cedula && a.getContrasena()==contrasena){
@@ -62,4 +62,14 @@ public class Administrador extends Usuario  {
         }
        return null;
    }
+
+   @Override
+	public void ejecutar() {
+		
+	}
+
+	@Override
+	public String toString() {
+		return null;
+	}
 }

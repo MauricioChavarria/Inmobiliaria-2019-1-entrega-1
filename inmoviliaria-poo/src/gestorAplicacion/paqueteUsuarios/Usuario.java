@@ -1,6 +1,8 @@
 package gestorAplicacion.paqueteUsuarios;
 
-public class Usuario {
+import uiMain.OpcionDeMenu;
+
+public class Usuario extends OpcionDeMenu {
 	private int cedula;
 	private String nombre;
     	private String correo;
@@ -53,6 +55,16 @@ public class Usuario {
 	
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
+	}
+
+	@Override
+	public void ejecutar() {
+		
+	}
+
+	@Override
+	public String toString() {
+		return null;
 	}
 	
 }

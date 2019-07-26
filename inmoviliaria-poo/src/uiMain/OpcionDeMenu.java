@@ -5,7 +5,7 @@ public abstract class OpcionDeMenu {
 	private String key;
 	
 	protected OpcionDeMenu(String tituloMenu) {
-		System.out.println();
+		System.out.println(tituloMenu);
 	}
 
 	public void setkey(String key_n){

@@ -7,16 +7,16 @@ import java.util.*;
  */
 public class MenuDeConsola {
 
-	HashMap<String,OpcionDeMenu> opciones = new HashMap<String,OpcionDeMenu>();
+	public static List<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
 
-    public MenuDeConsola(HashMap<String,OpcionDeMenu> opcionesNuevas){
+    public MenuDeConsola(List<OpcionDeMenu> opcionesNuevas){
 		this.opciones = opcionesNuevas;
 	}
 
 	public void mostrarMenu(){
 		int i = 1;
-		for(Map.Entry<String, OpcionDeMenu> op : this.opciones.entrySet() ){
-			System.out.println(i+" "+op.getValue());
+		for(OpcionDeMenu op : this.opciones) {
+			System.out.println(i+" "+op);
 			i++;
 		}
 	}
