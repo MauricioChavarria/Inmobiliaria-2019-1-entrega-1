@@ -6,7 +6,7 @@ import gestorAplicacion.paqueteServicios.Inmueble;
 //import gestorAplicacion.paqueteUsuarios.Funcionario;
 import uiMain.OpcionDeMenu;
 
-public class buscarInmueblesEnVenta_o_EnArriendo extends OpcionDeMenu {
+public class BuscarInmueblesEnVenta_o_EnArriendo extends OpcionDeMenu {
 
 	private Scanner leer;
 

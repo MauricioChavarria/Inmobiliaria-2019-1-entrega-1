@@ -3,11 +3,12 @@ package uiMain.operaciones;
 import gestorAplicacion.paqueteUsuarios.Administrador;
 import uiMain.OpcionDeMenu;
 
-public class listarAdmin extends OpcionDeMenu{
+public class ListarAdmin extends OpcionDeMenu{
 
 	@Override
 	public void ejecutar() {
 		Administrador.listarAdministradores();
+		System.out.println("No se regrese, por favor");
 	}
 
 	@Override

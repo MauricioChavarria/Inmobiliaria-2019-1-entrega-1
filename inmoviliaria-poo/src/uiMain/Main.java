@@ -28,17 +28,18 @@ class Main {
 		// Contrato test6 = new Contrato(123,new Date(0), 2.0, test3, true);
 		
 		SerializerData data = new SerializerData();
+		data.finalize();
 		System.out.println("SIZE USERS LIST: "+Administrador.admins.size());
-		System.out.println(Administrador.admins.get(0).getCedula()+" - "+Administrador.admins.get(0).getContrasena());
+		System.out.println("DFAULT USER: "+Administrador.admins.get(0).getCedula()+" - "+Administrador.admins.get(0).getContrasena());
 		
 		//Menu inicial
-		opciones.add(new Login());
-		opciones.add(new Registrar());
+		opciones.add(new Login());		
 		
 		menu = new MenuDeConsola(opciones);
 		
 		while(true){
 			//Siempre ejecuta el ultimo menu al que se entró
+			System.out.println("\n\n");
 			MenuDeConsola.stackMenu.get(MenuDeConsola.stackMenu.size()-1).mostrarMenu();
 			
 			System.out.println((MenuDeConsola.stackMenu.get(MenuDeConsola.stackMenu.size()-1).getOpciones().size()+1)+" Salir.");

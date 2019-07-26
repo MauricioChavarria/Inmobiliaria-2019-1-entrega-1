@@ -1,12 +1,17 @@
 package uiMain;
 
+import java.io.Serializable;
 import java.util.*;
 
 /**
  * MenuConsola
  */
-public class MenuDeConsola {
+public class MenuDeConsola implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private List<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
 	public static List<MenuDeConsola> stackMenu = new ArrayList<MenuDeConsola>();
 

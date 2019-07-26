@@ -28,6 +28,7 @@ public class SerializerData {
 	public SerializerData() throws IOException {
 
 		System.out.println(path);
+		
 		try{
 			serializeDataIn();
 		//	if(objetos.size() > 2) {

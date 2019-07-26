@@ -26,17 +26,17 @@ public class Login extends OpcionDeMenu{
 		if(admin != null){
 			usuarioEntontrado = true;
 			admin.setLogin(true);
-
+			
 			List<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
 			//Funciones de administrador
 			opciones.add(new Registrar());
-			opciones.add(null);
+			opciones.add(new ListarAdmin());
+			opciones.add(new ListarCliente());
 			
 			MenuDeConsola menu = new MenuDeConsola(opciones);
 		}else {			
 			System.out.println("El usuario no existe");
-		}
-		System.out.println("\n");
+		}		
 	}
 
 	@Override

@@ -92,7 +92,7 @@ public class Registrar extends OpcionDeMenu{
 
 	@Override
 	public String toString() {
-		return "Registrarse";
+		return "Registrar usuario";
 	}
 
 }
