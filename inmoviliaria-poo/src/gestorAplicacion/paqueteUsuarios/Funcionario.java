@@ -1,10 +1,10 @@
 package gestorAplicacion.paqueteUsuarios;
 
+import gestorAplicacion.paqueteServicios.Inmueble;
+import gestorAplicacion.paqueteServicios.Contrato;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-
-import gestorAplicacion.paqueteServicios.*;
 
 public class Funcionario extends Usuario {
 	
@@ -14,7 +14,7 @@ public class Funcionario extends Usuario {
     public static List<Funcionario> funcionarios = new ArrayList<Funcionario>();
 	
 	public Funcionario(int cedula, String nombre, String correo, String contrasena, String direccion, Long sueldo, Long comision, Cliente clientes) {
-		super(cedula, nombre, correo, contrasena, direccion,"funcionario");
+		super(cedula, nombre, correo, contrasena, direccion);
 		this.sueldo=sueldo;
 		this.comision=comision;
 	}
@@ -44,31 +44,30 @@ public class Funcionario extends Usuario {
         return clientes_encontrados;
     }
 	
-	public static LinkedList<Inmueble> listarInmuebles(LinkedList<Inmueble> todos_inmuebles){
-		LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<Inmueble>();
-		for (Inmueble iterado : todos_inmuebles) {
-			inmuebles_encontrados.add(iterado);
+	 public static LinkedList<Inmueble> listarInmuebles(LinkedList<Inmueble> todos_inmuebles){
+		 LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<Inmueble>();
+	        for (Inmueble iterado : todos_inmuebles) {
+	        	inmuebles_encontrados.add(iterado);
+	        }
+	        return inmuebles_encontrados;
 		}
-		return inmuebles_encontrados;
-	}
-	public static void addCliente(Cliente p){
-		Cliente.clientes.add(p);
-	}
-	public static void addContrato(Contrato p){
-		Contrato.contratos.add(p);
-	}
-	public static Funcionario getFuncionario(int cc,List<Funcionario> funcionarios) {
-		return funcionarios.get(cc);
-	}
-	public static Funcionario login(int cedula, String contrasena) {
-		
-			for(Funcionario f: funcionarios){
-				if(f.getCedula()== cedula && f.getContrasena()==contrasena){
-					return f;
-				}
-			}
-		return null;
-
-	}
-
+	 public static void addCliente(Cliente p){
+		 Cliente.clientes.add(p);
+	    }
+	 public static void addContrato(Contrato p){
+	        Contrato.contratos.add(p);
+	    }
+	 public static Funcionario getFuncionario(int cc,List<Funcionario> funcionarios) {
+	        return funcionarios.get(cc);
+	    }
+	 public static Funcionario login(int cedula, String contrasena, ArrayList<Funcionario> Funcionarios) {
+	        
+         for(Funcionario f: funcionarios){
+             if(f.getCedula()== cedula && f.getContrasena()==contrasena){
+                 return f;
+             }
+         }
+        return null;
+    }
 }
+
