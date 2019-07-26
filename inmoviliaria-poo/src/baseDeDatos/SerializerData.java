@@ -7,6 +7,13 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.*;
 import gestorAplicacion.*;
+import gestorAplicacion.paqueteServicios.Arriendo;
+import gestorAplicacion.paqueteServicios.Compraventa;
+import gestorAplicacion.paqueteServicios.Contrato;
+import gestorAplicacion.paqueteServicios.Inmueble;
+import gestorAplicacion.paqueteUsuarios.Administrador;
+import gestorAplicacion.paqueteUsuarios.Cliente;
+import gestorAplicacion.paqueteUsuarios.Funcionario;
 
 
 public class SerializerData {
