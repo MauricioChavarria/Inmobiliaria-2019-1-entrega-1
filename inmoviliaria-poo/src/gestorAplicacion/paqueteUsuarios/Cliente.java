@@ -39,13 +39,15 @@ public class Cliente extends Usuario implements Serializable {
     public static Cliente getCliente(int cc,List<Cliente> clientes) {
         return clientes.get(cc);
     }
-    public static Cliente login(int cedula, String contrasena, ArrayList<Cliente> clientes) {
+    public static Cliente login(int cedula, String contrasena) {
         
-         for(Cliente c: clientes){
-             if(c.getCedula()== cedula && c.getContrasena().equals(contrasena)){
-                 return c;
-             }
-         }
-        return null;
+    	System.out.println("-----------------------");
+        for(Cliente c: clientes){
+            if(c.getCedula() == cedula && c.getContrasena().equals(contrasena)){
+                return c;
+            }
+        }
+        System.out.println("-----------------------");
+       return null;
     }
 }

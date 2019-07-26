@@ -19,7 +19,7 @@ public class Funcionario extends Usuario implements Serializable {
 	
     public static List<Funcionario> funcionarios = new ArrayList<Funcionario>();
 	
-	public Funcionario(int cedula, String nombre, String correo, String contrasena, String direccion, Long sueldo, Long comision, Cliente clientes) {
+	public Funcionario(int cedula, String nombre, String correo, String contrasena, String direccion, Long sueldo, Long comision) {
 		super(cedula, nombre, correo, contrasena, direccion);
 		this.sueldo=sueldo;
 		this.comision=comision;
@@ -72,14 +72,16 @@ public class Funcionario extends Usuario implements Serializable {
 	public static Funcionario getFuncionario(int cc,List<Funcionario> funcionarios) {
 		return funcionarios.get(cc);
 	}
-	public static Funcionario login(int cedula, String contrasena, ArrayList<Funcionario> Funcionarios) {
+	public static Funcionario login(int cedula, String contrasena) {
 	        
-		for(Funcionario f: funcionarios){
-			if(f.getCedula()== cedula && f.getContrasena().equals(contrasena)){
-				return f;
+		System.out.println("-----------------------");
+        for(Funcionario f: funcionarios){
+            if(f.getCedula() == cedula && f.getContrasena().equals(contrasena)){
+                return f;
             }
-		}
-		return null;
+        }
+        System.out.println("-----------------------");
+       return null;
     }
 }
 

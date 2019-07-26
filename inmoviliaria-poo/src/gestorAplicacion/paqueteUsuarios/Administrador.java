@@ -33,7 +33,7 @@ public class Administrador extends Usuario implements Serializable{
 	
 	public static void listarClientes() {
 		for(int i=0; i<=Cliente.clientes.size();i++) {
-			System.out.println("(Nombre: "+Cliente.clientes.get(i).getNombre()+", Cedula: "+Cliente.clientes.get(i).getCedula()+", Correo: "+Cliente.clientes.get(i).getCorreo()+", Direccion: "+Cliente.clientes.get(i).getDireccion()+")");
+			System.out.println(Cliente.clientes.get(i).getContrasena()+"(Nombre: "+Cliente.clientes.get(i).getNombre()+", Cedula: "+Cliente.clientes.get(i).getCedula()+", Correo: "+Cliente.clientes.get(i).getCorreo()+", Direccion: "+Cliente.clientes.get(i).getDireccion()+")");
 		}
 	}
 	
@@ -71,7 +71,6 @@ public class Administrador extends Usuario implements Serializable{
         
 		System.out.println("-----------------------");
         for(Administrador a: admins){
-        	System.out.println((a.getCedula()== cedula)+" - "+(a.getContrasena().equals(contrasena)));
             if(a.getCedula() == cedula && a.getContrasena().equals(contrasena)){
                 return a;
             }

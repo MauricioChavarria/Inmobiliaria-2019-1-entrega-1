@@ -53,9 +53,9 @@ public class Registrar extends OpcionDeMenu{
 		String nombre = leer.next();
 		System.out.println("Ingrese correo: ");
 		String correo = leer.next();
-		System.out.println("Ingrese contraseña: ");
+		System.out.println("Ingrese contrase�a: ");
 		String contrasena = leer.next();
-		System.out.println("Ingrese dirección: ");
+		System.out.println("Ingrese direccion: ");
 		String direccion = leer.next();
 		System.out.println("Seleccione rol, \n 1 -> Administrador \n 2 -> Cliente \n 3 -> Funcionario");
 		int rol = leer.nextInt();	
@@ -69,22 +69,22 @@ public class Registrar extends OpcionDeMenu{
 				new Cliente(cedula, nombre, correo, contrasena,direccion);
 				break;
 			case 3:
-				Cliente clienteEncontrado = null;
+				//Cliente clienteEncontrado = null;
 				
 				System.out.println("Ingrese sueldo: ");
 				Long sueldo = leer.nextLong();
 				System.out.println("Ingrese comision: ");
 				Long comision = leer.nextLong();
-				System.out.println("Ingrese cedula de cliente: ");
-				int cliente = leer.nextInt();
+//				System.out.println("Ingrese cedula de cliente: ");
+//				int cliente = leer.nextInt();
 				
-				for(int i=0; i<=Cliente.clientes.size(); i++) {
-					if (cliente == Cliente.clientes.get(i).getCedula()) {
-						clienteEncontrado = Cliente.clientes.get(i);
-					}
-				}
+//				for(int i=0; i<=Cliente.clientes.size(); i++) {
+//					if (cliente == Cliente.clientes.get(i).getCedula()) {
+//						clienteEncontrado = Cliente.clientes.get(i);
+//					}
+//				}
 				
-				new Funcionario(cedula, nombre, correo, contrasena,direccion,sueldo,comision,clienteEncontrado);
+				new Funcionario(cedula, nombre, correo, contrasena,direccion,sueldo,comision);
 				break;
 			}
 		}

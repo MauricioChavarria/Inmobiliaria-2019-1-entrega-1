@@ -185,13 +185,13 @@ public class Inmueble implements Serializable {
     public static void buscarInmueblesEnVenta_o_EnArriendo(String tipo) {
     	int i=0;
         for (Inmueble iterado : Inmueble.inmuebles) {
-            if (iterado.getTipo().equalsIgnoreCase("enVenta")) {
-            	Inmueble.inmuebles.get(i);
+            if (iterado.getTipo().equals("enVenta")) {
                 System.out.println("Inmuebles en venta");
+                System.out.println(Inmueble.inmuebles.get(i));
                 return;
-            }else if(iterado.getTipo().equalsIgnoreCase("enArriendo")) {
-            	Inmueble.inmuebles.get(i);
+            }else if(iterado.getTipo().equals("enArriendo")) {
                 System.out.println("Inmuebles en arriendo");
+                System.out.println(Inmueble.inmuebles.get(i));
                 return;
             }
             i++;
