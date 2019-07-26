@@ -16,8 +16,7 @@ public class Usuario extends OpcionDeMenu implements Serializable{
 	private String direccion;
 	private Boolean login = false;
 
-	public Usuario(int cedula, String nombre, String correo, String contrasena, String direccion) {
-		super();
+	public Usuario(int cedula, String nombre, String correo, String contrasena, String direccion) {		
 		this.cedula = cedula;
 		this.nombre = nombre;
 		this.correo = correo;

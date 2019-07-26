@@ -2,11 +2,7 @@ package uiMain;
 
 public abstract class OpcionDeMenu {
 	
-	private String key;
-	
-	protected OpcionDeMenu() {
-		System.out.println();
-	}
+	private String key;	
 
 	public void setkey(String key_n){
 		this.key = key_n;

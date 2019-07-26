@@ -5,6 +5,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 
 import gestorAplicacion.paqueteServicios.*;
@@ -17,10 +19,15 @@ public class SerializerData {
 	 * @param args
 	 */
 	static LinkedList<Object> objetos = new LinkedList<Object>();
-	static String nombreArchivo = System.getProperty("user.dir")+"\\src\\temp\\dataSerialized";
+	static String nombreArchivo = System.getProperty("user.dir");
+
+	private static Path path = Paths.get(nombreArchivo, "src", "temp", "dataSerialized");
 
 	
+	
 	public SerializerData() throws IOException {
+
+		System.out.println(path);
 		try{
 			serializeDataIn();
 		//	if(objetos.size() > 2) {
@@ -46,7 +53,7 @@ public class SerializerData {
 	}
 	
 	private static void serializeDataOut()throws IOException{
-	    FileOutputStream fos = new FileOutputStream(nombreArchivo);
+	    FileOutputStream fos = new FileOutputStream(path.toString());
 	    ObjectOutputStream oos = new ObjectOutputStream(fos);
 	    oos.writeObject(objetos);
 	    oos.close();
@@ -54,7 +61,7 @@ public class SerializerData {
 
 	public static void serializeDataIn() throws IOException, ClassNotFoundException{
 
-	   FileInputStream fin = new FileInputStream(nombreArchivo);
+	   FileInputStream fin = new FileInputStream(path.toString());
 	   ObjectInputStream ois = new ObjectInputStream(fin);
 	   objetos = (LinkedList)ois.readObject();
 	   
