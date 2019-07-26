@@ -1,11 +1,11 @@
 package gestorAplicacion.paqueteUsuarios;
 
-import gestorAplicacion.paqueteServicios.Inmueble;
+//import gestorAplicacion.paqueteServicios.Inmueble;
 import gestorAplicacion.paqueteServicios.Contrato;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.LinkedList;
+//import java.util.LinkedList;
 import java.util.List;
 
 public class Funcionario extends Usuario implements Serializable {
@@ -43,12 +43,32 @@ public class Funcionario extends Usuario implements Serializable {
 		this.comision = comision;
 	}
 
-	public static void addCliente(Cliente p){
-		Cliente.clientes.add(p);
+	public static void eliminarCliente(int cedula){
+		int i=0;
+		for(Cliente cliente: Cliente.clientes) {
+			
+			if(cliente.getCedula()==cedula) {
+				Funcionario.funcionarios.remove(i);
+				System.out.println("Cliente eliminado");
+				return;
+			}
+			i++;
+		}
+		System.out.println("Cliente no existe");
 	}
-	public static void addContrato(Contrato p){
-		Contrato.contratos.add(p);
-	    }
+	public static void eliminarContrato(int codigo){
+		int i=0;
+		for(Contrato contrato: Contrato.contratos) {
+			
+			if(contrato.getCodigo()==codigo) {
+				Funcionario.funcionarios.remove(i);
+				System.out.println("Contrato eliminado");
+				return;
+			}
+			i++;
+		}
+		System.out.println("Contrato no existe");
+	}
 	public static Funcionario getFuncionario(int cc,List<Funcionario> funcionarios) {
 		return funcionarios.get(cc);
 	}

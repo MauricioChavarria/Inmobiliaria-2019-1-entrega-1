@@ -1,11 +1,11 @@
 package uiMain.operaciones;
 import java.util.ArrayList;
-import java.util.HashMap;
+//import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
 import gestorAplicacion.paqueteUsuarios.Administrador;
-import gestorAplicacion.paqueteUsuarios.Usuario;
+//import gestorAplicacion.paqueteUsuarios.Usuario;
 import uiMain.MenuDeConsola;
 import uiMain.OpcionDeMenu;
 

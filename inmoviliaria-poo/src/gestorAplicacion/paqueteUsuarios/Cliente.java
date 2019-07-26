@@ -1,10 +1,13 @@
 package gestorAplicacion.paqueteUsuarios;
 
-import gestorAplicacion.paqueteServicios.Inmueble;
+//import gestorAplicacion.paqueteServicios.Inmueble;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+//import gestorAplicacion.paqueteServicios.Contrato;
+import gestorAplicacion.paqueteServicios.Inmueble;
 
 public class Cliente extends Usuario implements Serializable {
 
@@ -19,9 +22,19 @@ public class Cliente extends Usuario implements Serializable {
          clientes.add(this);
     }
     
-    public static void addInmueble(Inmueble I){
-		 Inmueble.inmuebles.add(I);
-	    }
+    public static void eliminarInmueble(int codigo){
+		int i=0;
+		for(Inmueble inmueble: Inmueble.inmuebles) {
+			
+			if(inmueble.getcodigo_Inmueble()==codigo) {
+				Funcionario.funcionarios.remove(i);
+				System.out.println("Inmueble eliminado");
+				return;
+			}
+			i++;
+		}
+		System.out.println("Este inmueble no existe");
+	}
     
     public static Cliente getCliente(int cc,List<Cliente> clientes) {
         return clientes.get(cc);
