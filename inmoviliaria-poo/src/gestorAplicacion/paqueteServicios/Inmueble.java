@@ -1,12 +1,12 @@
 package gestorAplicacion.paqueteServicios;
+
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Inmueble {
     
-    private String codigo_Inmueble;
+    private int codigo_Inmueble;
 	private int predial;
     private int estrato;
     private boolean vigilancia;
@@ -23,7 +23,7 @@ public class Inmueble {
     
     public static List<Inmueble> inmuebles = new ArrayList<Inmueble>();
 
-    public Inmueble(String codigo_Inmueble,int predial, int estrato, boolean vigilancia, boolean ascensor, int area, int banos, int cuartos, String tipo, Compraventa compraventa, String ciudad, int antiguedad, boolean disponible) {
+    public Inmueble(int codigo_Inmueble,int predial, int estrato, boolean vigilancia, boolean ascensor, int area, int banos, int cuartos, String tipo, Compraventa compraventa, String ciudad, int antiguedad, boolean disponible) {
         this.codigo_Inmueble=codigo_Inmueble;
     	this.predial = predial;
         this.estrato = estrato;
@@ -45,11 +45,11 @@ public class Inmueble {
         return "Inmueble{"+"codigo Inmueble ="+ codigo_Inmueble + ", estrato=" + estrato + ", vigilancia=" + vigilancia + ", ascensor=" + ascensor + ", area=" + area + ", banos=" + banos + ", cuartos=" + cuartos + ", tipo=" + tipo + ", arriendo=" + arriendo + ", compraventa=" + compraventa + ", ciudad=" + ciudad + ", antiguedad=" + antiguedad + ", disponible=" + disponible + '}';
     }
     
-    public String getcodigo_Inmueble() {
+    public int getcodigo_Inmueble() {
     	return codigo_Inmueble;
     }
     
-    public void setcodigo_Inmueble(String codigo_Inmueble ) {
+    public void setcodigo_Inmueble(int codigo_Inmueble ) {
     	this.codigo_Inmueble = codigo_Inmueble;
     }
 
@@ -60,8 +60,6 @@ public class Inmueble {
     public void setPredial(Integer predial) {
         this.predial = predial;
     }
-    
-    
     
     public int getEstrato() {
         return estrato;
@@ -177,33 +175,6 @@ public class Inmueble {
         }
     }
 
-
-    public static LinkedList<Inmueble> verInmueblesDisponibles(LinkedList<Inmueble> todos_inmuebles) {
-        Iterator<Inmueble> i;
-        Inmueble actual;
-        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<Inmueble>();
-        i = todos_inmuebles.listIterator();
-        while (i.hasNext()) {
-            actual = i.next();
-            if (actual.getDisponible()) {
-                inmuebles_encontrados.add(actual);
-            }
-        }
-        if (inmuebles_encontrados.isEmpty()) {
-            return null;
-        }
-        return inmuebles_encontrados;
-    }
-
-    public static Inmueble buscarPorPredial(List<Inmueble> inmuebles, int predial) {
-        for (Inmueble iterado : inmuebles) {
-            if (iterado.getPredial() == predial) {
-                return iterado;
-            }
-        }
-        return null;
-    }
-
     public static LinkedList<Inmueble> buscarInmueblesEnCompraventa(LinkedList<Inmueble> todos_inmuebles) {
         LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<Inmueble>();
         for (Inmueble iterado : todos_inmuebles) {
@@ -231,69 +202,4 @@ public class Inmueble {
         }
         return inmuebles_encontrados;
     }
-
-    ////busquedaaaaaaaas
-    //por ciudad
-    public static LinkedList<Inmueble> buscarPorCiudad(LinkedList<Inmueble> todos_inmuebles, String ciudad) {
-        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<Inmueble>();
-        for (Inmueble iterado : todos_inmuebles) {
-            if (iterado.getCiudad().equalsIgnoreCase(ciudad)) {
-                inmuebles_encontrados.add(iterado);
-            }
-        }
-        if (inmuebles_encontrados.isEmpty()) {
-            return null;
-        }
-        return inmuebles_encontrados;
-    }
-
-    //por estrato
-    public static LinkedList<Inmueble> buscarPorEstrato(LinkedList<Inmueble> todos_inmuebles, int estrato) {
-        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<Inmueble>();
-        for (Inmueble iterado : todos_inmuebles) {
-            if (iterado.getEstrato() == estrato) {
-                inmuebles_encontrados.add(iterado);
-            }
-        }
-        if (inmuebles_encontrados.isEmpty()) {
-            return null;
-        }
-        return inmuebles_encontrados;
-    }
-
-    //por numero de banos
-    public static LinkedList<Inmueble> buscarPorNumeroDeBanos(LinkedList<Inmueble> todos_inmuebles, int banosini, int banostop) {
-        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<Inmueble>();
-        int bano;
-        for (Inmueble iterado : todos_inmuebles) {
-            bano = iterado.getBanos();
-            if ((bano >= banosini) && (bano <= banostop)) {
-                inmuebles_encontrados.add(iterado);
-            }
-        }
-        if (inmuebles_encontrados.isEmpty()) {
-            return null;
-        }
-        return inmuebles_encontrados;
-    }
-
-    //por numero de cuartos
-    public static LinkedList<Inmueble> buscarPorNumeroDeCuartos(LinkedList<Inmueble> todos_inmuebles, int cuartosini, int cuartostop) {
-        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<Inmueble>();
-        int c;
-        for (Inmueble iterado : todos_inmuebles) {
-            c = iterado.getCuartos();
-
-            if ((c <= cuartostop) && (c >= cuartosini)) {
-                inmuebles_encontrados.add(iterado);
-            }
-        }
-        if (inmuebles_encontrados.isEmpty()) {
-            return null;
-        }
-        return inmuebles_encontrados;
-    }
-
-    
-
 }
