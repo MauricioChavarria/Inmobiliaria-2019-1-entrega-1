@@ -24,42 +24,24 @@ public class Administrador extends Usuario implements Serializable{
 		admins.add(this);
 	}
 	
-	public static LinkedList<Funcionario> listarFuncionarios(LinkedList<Funcionario> todos_funcionarios){
-		 LinkedList<Funcionario> funcionarioa_encontrados = new LinkedList<Funcionario>();
-	        for (Funcionario iterado : todos_funcionarios) {
-	        	funcionarioa_encontrados.add(iterado);
-	        }
-	        return funcionarioa_encontrados;
+	public static void listarFuncionarios(){
+		 for(int i=0; i<=Funcionario.funcionarios.size();i++) {
+			 System.out.println("(Nombre: "+Funcionario.funcionarios.get(i).getNombre()+", Cedula: "+Funcionario.funcionarios.get(i).getCedula()+", Correo: "+Funcionario.funcionarios.get(i).getCorreo()+", Direccion: "+Funcionario.funcionarios.get(i).getDireccion()+", Sueldo: "+Funcionario.funcionarios.get(i).getSueldo()+", Comision: "+Funcionario.funcionarios.get(i).getComision()+")");
+		 }
 	}
 	
-	public static LinkedList<Cliente> listarClientes(LinkedList<Cliente> todos_clientes) {
-        LinkedList<Cliente> clientes_encontrados = new LinkedList<Cliente>();
-        for (Cliente iterado : todos_clientes) {
-        	clientes_encontrados.add(iterado);
-        }
-        return clientes_encontrados;
-    }
+	public static void listarClientes() {
+		for(int i=0; i<=Cliente.clientes.size();i++) {
+			System.out.println("(Nombre: "+Cliente.clientes.get(i).getNombre()+", Cedula: "+Cliente.clientes.get(i).getCedula()+", Correo: "+Cliente.clientes.get(i).getCorreo()+", Direccion: "+Cliente.clientes.get(i).getDireccion()+")");
+		}
+	}
 	
-	public static LinkedList<Administrador> listarAdministradores(LinkedList<Administrador> todos_admins) {
-        LinkedList<Administrador> admins_encontrados = new LinkedList<Administrador>();
-        for (Administrador iterado : todos_admins) {
-        	admins_encontrados.add(iterado);
-        }
-        return admins_encontrados;
-    }
+	public static void listarAdministradores() {
+		for(int i=0; i<=Administrador.admins.size();i++) {
+			 System.out.println("(Nombre: "+Administrador.admins.get(i).getNombre()+", Cedula: "+Administrador.admins.get(i).getCedula()+", Correo: "+Administrador.admins.get(i).getCorreo()+", Direccion: "+Administrador.admins.get(i).getDireccion()+")");
+		 }
+   }
 	
-<<<<<<< HEAD
-	public static LinkedList<Inmueble> listarInmuebles(LinkedList<Inmueble> todos_Inmuebles) {
-        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<Inmueble>();
-        for (Inmueble iterado : todos_Inmuebles) {
-        	inmuebles_encontrados.add(iterado);
-        }
-        return inmuebles_encontrados;
-    }
-	
-	public static void addFuncionario(Funcionario f){
-		 Funcionario.funcionarios.add(f);
-=======
 	public static void listarInmuebles() {
 		for(int i=0; i<=Inmueble.inmuebles.size();i++) {
 			 System.out.println("(Codigo: "+Inmueble.inmuebles.get(i).getcodigo_Inmueble()+", Antiguedad: "+Inmueble.inmuebles.get(i).getAntiguedad()+", Area: "+Inmueble.inmuebles.get(i).getArea()+", Baños: "+Inmueble.inmuebles.get(i).getBanos()+", Ciudad:"+Inmueble.inmuebles.get(i).getCiudad()+", Cuartos: "+Inmueble.inmuebles.get(i).getCuartos()+", Estrato: "+Inmueble.inmuebles.get(i).getEstrato()+", Predial: "+Inmueble.inmuebles.get(i).getPredial()+", Disponible: "+Inmueble.inmuebles.get(i).getDisponible()+")");
@@ -78,7 +60,6 @@ public class Administrador extends Usuario implements Serializable{
 			i++;
 		}
 		System.out.println("Funcionario no existe");
->>>>>>> 25d82761c37e96bf9f460df1dccefffeee5c37c8
 	}
 	
 	public static Administrador getAdministrador(int cc,List<Administrador> admins) {
@@ -88,7 +69,8 @@ public class Administrador extends Usuario implements Serializable{
 	public static Administrador login(int cedula, String contrasena) {
         
 		System.out.println("-----------------------");
-        for(Administrador a: admins){        	
+        for(Administrador a: admins){
+        	System.out.println((a.getCedula()== cedula)+" - "+(a.getContrasena().equals(contrasena)));
             if(a.getCedula() == cedula && a.getContrasena().equals(contrasena)){
                 return a;
             }
