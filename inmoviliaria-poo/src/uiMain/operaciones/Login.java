@@ -22,13 +22,13 @@ public class Login extends OpcionDeMenu{
 		String password = leer.next();
 		
 		//Buscar en cada uno de los tipos de usuarios
-		Usuario user = Administrador.login(cedula,password);
-		if(user != null){
+		Administrador admin = Administrador.login(cedula,password);
+		if(admin != null){
 			usuarioEntontrado = true;
-			user.setLogin(true);
+			admin.setLogin(true);
 
 			List<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
-			opciones.add(user);
+			opciones.add(admin);
 			
 			MenuDeConsola menu = new MenuDeConsola(opciones);
 			menu.mostrarMenu();

@@ -39,6 +39,7 @@ public class SerializerData {
 			   //Compraventa.compraventas = (List<Compraventa>) objetos.get(5);
 			   //Contrato.contratos = (List<Contrato>) objetos.get(6);
 		//	}
+			System.out.println("Cargados en listas");
 		}catch(ClassNotFoundException e){
 			System.out.println("Clase no encontrada");
 		}catch(IOException e){
@@ -65,7 +66,7 @@ public class SerializerData {
 	   ObjectInputStream ois = new ObjectInputStream(fin);
 	   objetos = (LinkedList)ois.readObject();
 	   
-	   System.out.println("Llegue sin ganas ");
+	   System.out.println("Datos cargados");
 	   ois.close();
 	}
 
