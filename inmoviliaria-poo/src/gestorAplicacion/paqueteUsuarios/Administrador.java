@@ -2,10 +2,10 @@ package gestorAplicacion.paqueteUsuarios;
 
 import gestorAplicacion.paqueteServicios.Inmueble;
 
-import java.awt.SystemTray;
+//import java.awt.SystemTray;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.LinkedList;
+//import java.util.LinkedList;
 import java.util.List;
 
 public class Administrador extends Usuario implements Serializable{
@@ -48,6 +48,7 @@ public class Administrador extends Usuario implements Serializable{
         return admins_encontrados;
     }
 	
+<<<<<<< HEAD
 	public static LinkedList<Inmueble> listarInmuebles(LinkedList<Inmueble> todos_Inmuebles) {
         LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<Inmueble>();
         for (Inmueble iterado : todos_Inmuebles) {
@@ -58,6 +59,26 @@ public class Administrador extends Usuario implements Serializable{
 	
 	public static void addFuncionario(Funcionario f){
 		 Funcionario.funcionarios.add(f);
+=======
+	public static void listarInmuebles() {
+		for(int i=0; i<=Inmueble.inmuebles.size();i++) {
+			 System.out.println("(Codigo: "+Inmueble.inmuebles.get(i).getcodigo_Inmueble()+", Antiguedad: "+Inmueble.inmuebles.get(i).getAntiguedad()+", Area: "+Inmueble.inmuebles.get(i).getArea()+", Baños: "+Inmueble.inmuebles.get(i).getBanos()+", Ciudad:"+Inmueble.inmuebles.get(i).getCiudad()+", Cuartos: "+Inmueble.inmuebles.get(i).getCuartos()+", Estrato: "+Inmueble.inmuebles.get(i).getEstrato()+", Predial: "+Inmueble.inmuebles.get(i).getPredial()+", Disponible: "+Inmueble.inmuebles.get(i).getDisponible()+")");
+		 }
+   }
+
+	public static void eliminarFuncionario(int cedula){
+		int i=0;
+		for(Funcionario funcionario: Funcionario.funcionarios) {
+			
+			if(funcionario.getCedula()==cedula) {
+				Funcionario.funcionarios.remove(i);
+				System.out.println("Funcionario eliminado");
+				return;
+			}
+			i++;
+		}
+		System.out.println("Funcionario no existe");
+>>>>>>> 25d82761c37e96bf9f460df1dccefffeee5c37c8
 	}
 	
 	public static Administrador getAdministrador(int cc,List<Administrador> admins) {
