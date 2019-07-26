@@ -15,37 +15,40 @@ public class Registrar extends OpcionDeMenu{
 
 	@Override
 	public void ejecutar() {
+		System.out.println("\n-----Registro de usuarios------");
 		Scanner leer = new Scanner(System.in);
 		System.out.println("Ingrese numero de cedula: ");
 		int cedula = leer.nextInt();
 		
 		boolean encontrado=false;
 		//Buscar en cada uno de los tipos de usuarios
+		System.out.println("Buscando en Administradores...");
+		for(int i=0; i<Administrador.admins.size(); i++) {
+			if (cedula == Administrador.admins.get(i).getCedula()) {				
+				encontrado=true;
+			}
+		}
+		
 		if(!encontrado) {
-			for(int i=0; i<=Administrador.admins.size(); i++) {
-				if (cedula == Administrador.admins.get(i).getCedula()) {
-					System.out.println("Este Usuario ya existe");
+			for(int i=0; i<Funcionario.funcionarios.size(); i++) {
+				if (cedula == Funcionario.funcionarios.get(i).getCedula()) {					
 					encontrado=true;
 				}
 			}
 		}
 		if(!encontrado) {
-			for(int i=0; i<=Funcionario.funcionarios.size(); i++) {
-				if (cedula == Funcionario.funcionarios.get(i).getCedula()) {
-					System.out.println("Este Usuario ya existe");
-					encontrado=true;
-				}
-			}
-		}
-		if(!encontrado) {
-			for(int i=0; i<=Cliente.clientes.size(); i++) {
+			for(int i=0; i<Cliente.clientes.size(); i++) {
 				if (cedula == Cliente.clientes.get(i).getCedula()) {
-					System.out.println("Este Usuario ya existe");
 					encontrado=true;
 				}
 			}
 		}
 		
+		
+		if(encontrado){
+			System.out.println("Este Usuario ya existe\n");
+			return;
+		}
 		System.out.println("Ingrese nombre: ");
 		String nombre = leer.next();
 		System.out.println("Ingrese correo: ");
@@ -89,7 +92,7 @@ public class Registrar extends OpcionDeMenu{
 
 	@Override
 	public String toString() {
-		return "Iniciar sesión";
+		return "Registrarse";
 	}
 
 }

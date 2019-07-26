@@ -66,7 +66,7 @@ public class SerializerData {
 	   ObjectInputStream ois = new ObjectInputStream(fin);
 	   objetos = (LinkedList)ois.readObject();
 	   
-	   System.out.println("Datos cargados");
+	   System.out.println("Bye.");
 	   ois.close();
 	}
 
@@ -80,6 +80,7 @@ public class SerializerData {
 		//objetos.push(Contrato.contratos);
 		try{
 			serializeDataOut();
+			System.out.println("Datos guardados");
 		}catch(IOException e){
 			System.out.println("Error al guardar datos \n" + e);
 		}
