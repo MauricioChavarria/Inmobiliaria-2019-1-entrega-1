@@ -2,12 +2,18 @@ package gestorAplicacion.paqueteUsuarios;
 
 import gestorAplicacion.paqueteServicios.Inmueble;
 import gestorAplicacion.paqueteServicios.Contrato;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Funcionario extends Usuario {
+public class Funcionario extends Usuario implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Long sueldo;
 	private Long comision;
 	

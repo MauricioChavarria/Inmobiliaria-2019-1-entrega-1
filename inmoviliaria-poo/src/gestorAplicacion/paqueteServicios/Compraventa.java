@@ -1,5 +1,6 @@
 package gestorAplicacion.paqueteServicios;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -8,9 +9,13 @@ import gestorAplicacion.paqueteUsuarios.Cliente;
 import gestorAplicacion.paqueteServicios.Contrato;
 import gestorAplicacion.paqueteServicios.Inmueble;
 
-public class Compraventa extends Contrato {
+public class Compraventa extends Contrato implements Serializable {
 
-  private Cliente comprador;
+  /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+private Cliente comprador;
   private String medioPago;
   public static List<Compraventa> compraventas = new ArrayList<Compraventa>();
   
