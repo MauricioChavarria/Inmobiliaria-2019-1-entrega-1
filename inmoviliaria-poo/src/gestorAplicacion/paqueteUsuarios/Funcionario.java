@@ -43,39 +43,23 @@ public class Funcionario extends Usuario implements Serializable {
 		this.comision = comision;
 	}
 
-
-	public static LinkedList<Cliente> listarClientes(LinkedList<Cliente> todos_clientes) {
-        LinkedList<Cliente> clientes_encontrados = new LinkedList<Cliente>();
-        for (Cliente iterado : todos_clientes) {
-        	clientes_encontrados.add(iterado);
-        }
-        return clientes_encontrados;
-    }
-	
-	 public static LinkedList<Inmueble> listarInmuebles(LinkedList<Inmueble> todos_inmuebles){
-		 LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<Inmueble>();
-	        for (Inmueble iterado : todos_inmuebles) {
-	        	inmuebles_encontrados.add(iterado);
-	        }
-	        return inmuebles_encontrados;
-		}
-	 public static void addCliente(Cliente p){
-		 Cliente.clientes.add(p);
+	public static void addCliente(Cliente p){
+		Cliente.clientes.add(p);
+	}
+	public static void addContrato(Contrato p){
+		Contrato.contratos.add(p);
 	    }
-	 public static void addContrato(Contrato p){
-	        Contrato.contratos.add(p);
-	    }
-	 public static Funcionario getFuncionario(int cc,List<Funcionario> funcionarios) {
-	        return funcionarios.get(cc);
-	    }
-	 public static Funcionario login(int cedula, String contrasena, ArrayList<Funcionario> Funcionarios) {
+	public static Funcionario getFuncionario(int cc,List<Funcionario> funcionarios) {
+		return funcionarios.get(cc);
+	}
+	public static Funcionario login(int cedula, String contrasena, ArrayList<Funcionario> Funcionarios) {
 	        
-         for(Funcionario f: funcionarios){
-             if(f.getCedula()== cedula && f.getContrasena()==contrasena){
-                 return f;
-             }
-         }
-        return null;
+		for(Funcionario f: funcionarios){
+			if(f.getCedula()== cedula && f.getContrasena().equals(contrasena)){
+				return f;
+            }
+		}
+		return null;
     }
 }
 

@@ -26,29 +26,27 @@ public class Administrador extends Usuario implements Serializable{
 	
 	public static void listarFuncionarios(){
 		 for(int i=0; i<=Funcionario.funcionarios.size();i++) {
-			 System.out.println("("+Funcionario.funcionarios.get(i).getNombre()+", "+Funcionario.funcionarios.get(i).getCedula()+", "+Funcionario.funcionarios.get(i).getCorreo()+", "+Funcionario.funcionarios.get(i).getDireccion()+", "+Funcionario.funcionarios.get(i).getSueldo()+", "+Funcionario.funcionarios.get(i).getComision()+")");
+			 System.out.println("(Nombre: "+Funcionario.funcionarios.get(i).getNombre()+", Cedula: "+Funcionario.funcionarios.get(i).getCedula()+", Correo: "+Funcionario.funcionarios.get(i).getCorreo()+", Direccion: "+Funcionario.funcionarios.get(i).getDireccion()+", Sueldo: "+Funcionario.funcionarios.get(i).getSueldo()+", Comision: "+Funcionario.funcionarios.get(i).getComision()+")");
 		 }
 	}
 	
 	public static void listarClientes() {
 		for(int i=0; i<=Cliente.clientes.size();i++) {
-			 System.out.println("("+Cliente.clientes.get(i).getNombre()+", "+Cliente.clientes.get(i).getCedula()+", "+Cliente.clientes.get(i).getCorreo()+", "+Cliente.clientes.get(i).getDireccion()+")");
-		 }
-   }
+			System.out.println("(Nombre: "+Cliente.clientes.get(i).getNombre()+", Cedula: "+Cliente.clientes.get(i).getCedula()+", Correo: "+Cliente.clientes.get(i).getCorreo()+", Direccion: "+Cliente.clientes.get(i).getDireccion()+")");
+		}
+	}
 	
 	public static void listarAdministradores() {
 		for(int i=0; i<=Administrador.admins.size();i++) {
-			 System.out.println("("+Administrador.admins.get(i).getNombre()+", "+Administrador.admins.get(i).getCedula()+", "+Administrador.admins.get(i).getCorreo()+", "+Administrador.admins.get(i).getDireccion()+")");
+			 System.out.println("(Nombre: "+Administrador.admins.get(i).getNombre()+", Cedula: "+Administrador.admins.get(i).getCedula()+", Correo: "+Administrador.admins.get(i).getCorreo()+", Direccion: "+Administrador.admins.get(i).getDireccion()+")");
 		 }
    }
 	
-	public static LinkedList<Inmueble> listarInmuebles(LinkedList<Inmueble> todos_Inmuebles) {
-        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<Inmueble>();
-        for (Inmueble iterado : todos_Inmuebles) {
-        	inmuebles_encontrados.add(iterado);
-        }
-        return inmuebles_encontrados;
-    }
+	public static void listarInmuebles() {
+		for(int i=0; i<=Inmueble.inmuebles.size();i++) {
+			 System.out.println("(Codigo: "+Inmueble.inmuebles.get(i).getcodigo_Inmueble()+", Antiguedad: "+Inmueble.inmuebles.get(i).getAntiguedad()+", Area: "+Inmueble.inmuebles.get(i).getArea()+", Baños: "+Inmueble.inmuebles.get(i).getBanos()+", Ciudad:"+Inmueble.inmuebles.get(i).getCiudad()+", Cuartos: "+Inmueble.inmuebles.get(i).getCuartos()+", Estrato: "+Inmueble.inmuebles.get(i).getEstrato()+", Predial: "+Inmueble.inmuebles.get(i).getPredial()+", Disponible: "+Inmueble.inmuebles.get(i).getDisponible()+")");
+		 }
+   }
 	
 	public static void addFuncionario(Funcionario f){
 		 Funcionario.funcionarios.add(f);
