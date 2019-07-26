@@ -3,16 +3,25 @@ package gestorAplicacion.paqueteUsuarios;
 import gestorAplicacion.paqueteServicios.Inmueble;
 
 import java.awt.SystemTray;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Administrador extends Usuario  {
+public class Administrador extends Usuario implements Serializable{
 
-    public static List<Administrador> admins = new ArrayList<Administrador>();
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	public static List<Administrador> admins = new ArrayList<Administrador>();
+    
 
 	public Administrador(int cedula, String nombre, String correo, String contrasena, String direccion) {
+		
 		super(cedula, nombre, correo, contrasena, direccion);
+		
+		admins.add(this);
 	}
 	
 	public static LinkedList<Funcionario> listarFuncionarios(LinkedList<Funcionario> todos_funcionarios){

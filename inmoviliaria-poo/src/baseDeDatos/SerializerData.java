@@ -17,21 +17,31 @@ public class SerializerData {
 	 * @param args
 	 */
 	static LinkedList<Object> objetos = new LinkedList<Object>();
-	static String nombreArchivo = System.getProperty("user.dir")+"/src/temp/dataSerialized";
+	static String nombreArchivo = System.getProperty("user.dir")+"\\src\\temp\\dataSerialized";
 
 	
-	public SerializerData() {
+	public SerializerData() throws IOException {
 		try{
 			serializeDataIn();
-		   Administrador.admins = (List<Administrador>) objetos.get(0);
-		   Cliente.clientes = (List<Cliente>) objetos.get(1);
-		   Funcionario.funcionarios = (List<Funcionario>) objetos.get(2);
-		   Inmueble.inmuebles = (List<Inmueble>) objetos.get(3);
-		   Arriendo.arriendos = (List<Arriendo>) objetos.get(4);
-		   Compraventa.compraventas = (List<Compraventa>) objetos.get(5);
-		   Contrato.contratos = (List<Contrato>) objetos.get(6);
-		}catch(ClassNotFoundException | IOException e){
-			System.out.println("No se puedo inicializar el programa");
+		//	if(objetos.size() > 2) {
+			   Administrador.admins = (List<Administrador>) objetos.get(0);
+//			   Cliente.clientes = (List<Cliente>) objetos.get(1);
+//			   Funcionario.funcionarios = (List<Funcionario>) objetos.get(2);
+			   //Inmueble.inmuebles = (List<Inmueble>) objetos.get(3);
+			   //Arriendo.arriendos = (List<Arriendo>) objetos.get(4);
+			   //Compraventa.compraventas = (List<Compraventa>) objetos.get(5);
+			   //Contrato.contratos = (List<Contrato>) objetos.get(6);
+		//	}
+		}catch(ClassNotFoundException e){
+			System.out.println("Clase no encontrada");
+		}catch(IOException e){
+			System.out.println("Archivo no encontrado");
+			try {
+				serializeDataOut();
+			}catch(IOException ee) {
+				System.err.print(ee);
+			}
+			
 		}
 	}
 	
@@ -47,21 +57,23 @@ public class SerializerData {
 	   FileInputStream fin = new FileInputStream(nombreArchivo);
 	   ObjectInputStream ois = new ObjectInputStream(fin);
 	   objetos = (LinkedList)ois.readObject();
+	   
+	   System.out.println("Llegue sin ganas ");
 	   ois.close();
 	}
 
 	public void finalize() {
 		objetos.push(Administrador.admins);
-		objetos.push(Cliente.clientes);
-		objetos.push(Funcionario.funcionarios);
-		objetos.push(Inmueble.inmuebles);
-		objetos.push(Arriendo.arriendos);
-		objetos.push(Compraventa.compraventas);
-		objetos.push(Contrato.contratos);
+//		objetos.push(Cliente.clientes);
+//		objetos.push(Funcionario.funcionarios);
+		//objetos.push(Inmueble.inmuebles);
+		//objetos.push(Arriendo.arriendos);
+		//objetos.push(Compraventa.compraventas);
+		//objetos.push(Contrato.contratos);
 		try{
 			serializeDataOut();
 		}catch(IOException e){
-			System.out.println("Error al guardar datos");
+			System.out.println("Error al guardar datos \n" + e);
 		}
 	}
 

@@ -9,6 +9,8 @@ public class Cliente extends Usuario{
     public static List<Cliente> clientes = new ArrayList<Cliente>();
     public Cliente(int cedula, String nombre, String correo, String contrasena, String direccion) {
          super(cedula,nombre,correo,contrasena,direccion);
+         
+         clientes.add(this);
     }
     
     public static void addInmueble(Inmueble I){

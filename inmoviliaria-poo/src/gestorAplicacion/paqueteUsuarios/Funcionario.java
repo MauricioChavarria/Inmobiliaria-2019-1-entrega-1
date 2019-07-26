@@ -17,6 +17,8 @@ public class Funcionario extends Usuario {
 		super(cedula, nombre, correo, contrasena, direccion);
 		this.sueldo=sueldo;
 		this.comision=comision;
+		
+		funcionarios.add(this);
 	}
 
 	public Long getSueldo() {
