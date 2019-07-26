@@ -5,21 +5,21 @@ import java.util.Scanner;
 import gestorAplicacion.paqueteUsuarios.Funcionario;
 import uiMain.OpcionDeMenu;
 
-public class eliminarInmueble extends OpcionDeMenu{
+public class EliminarCliente extends OpcionDeMenu{
 
 	private Scanner leer;
 
 	@Override
 	public void ejecutar() {
 		leer = new Scanner(System.in);
-		System.out.println("Ingrese codigo del inmueble: ");
-		int codigo = leer.nextInt();
-		Funcionario.eliminarCliente(codigo);
+		System.out.println("Ingrese numero de cedula: ");
+		int cedula = leer.nextInt();
+		Funcionario.eliminarCliente(cedula);
 	}
 
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "Eliminar inmueble";
+		return "Eliminar Cliente";
 	}
 }

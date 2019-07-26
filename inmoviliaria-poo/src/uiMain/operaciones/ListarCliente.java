@@ -3,17 +3,16 @@ package uiMain.operaciones;
 import gestorAplicacion.paqueteUsuarios.Administrador;
 import uiMain.OpcionDeMenu;
 
-public class listarAdmin extends OpcionDeMenu{
+public class ListarCliente extends OpcionDeMenu {
 
 	@Override
 	public void ejecutar() {
-		Administrador.listarAdministradores();
+		Administrador.listarClientes();
 	}
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return "Listar todos los Administradores";
+		return "Listar todos los clientes";
 	}
 
 }
