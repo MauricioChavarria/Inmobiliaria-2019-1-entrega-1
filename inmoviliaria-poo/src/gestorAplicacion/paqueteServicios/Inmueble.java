@@ -182,31 +182,20 @@ public class Inmueble implements Serializable {
         }
     }
 
-    public static LinkedList<Inmueble> buscarInmueblesEnCompraventa(LinkedList<Inmueble> todos_inmuebles) {
-        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<Inmueble>();
-        for (Inmueble iterado : todos_inmuebles) {
-
+    public static void buscarInmueblesEnVenta_o_EnArriendo(String tipo) {
+    	int i=0;
+        for (Inmueble iterado : Inmueble.inmuebles) {
             if (iterado.getTipo().equalsIgnoreCase("enVenta")) {
-                inmuebles_encontrados.add(iterado);
+            	Inmueble.inmuebles.get(i);
+                System.out.println("Inmuebles en venta");
+                return;
+            }else if(iterado.getTipo().equalsIgnoreCase("enArriendo")) {
+            	Inmueble.inmuebles.get(i);
+                System.out.println("Inmuebles en arriendo");
+                return;
             }
+            i++;
         }
-        if (inmuebles_encontrados.isEmpty()) {
-            return null;
-        }
-        return inmuebles_encontrados;
-    }
-
-    public static LinkedList<Inmueble> buscarInmueblesEnArriendo(LinkedList<Inmueble> todos_inmuebles) {
-        LinkedList<Inmueble> inmuebles_encontrados = new LinkedList<Inmueble>();
-        for (Inmueble iterado : todos_inmuebles) {
-
-            if (iterado.getTipo().equalsIgnoreCase("enArriendo")) {
-                inmuebles_encontrados.add(iterado);
-            }
-        }
-        if (inmuebles_encontrados.isEmpty()) {
-            return null;
-        }
-        return inmuebles_encontrados;
+        System.out.println("No se encontraron inmuebles");
     }
 }
