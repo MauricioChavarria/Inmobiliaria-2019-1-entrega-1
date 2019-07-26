@@ -67,8 +67,7 @@ public class Administrador extends Usuario implements Serializable{
 	public static Administrador login(int cedula, String contrasena) {
         
 		System.out.println("-----------------------");
-        for(Administrador a: admins){
-        	System.out.println((a.getCedula()== cedula)+" - "+(a.getContrasena().equals(contrasena)));
+        for(Administrador a: admins){        	
             if(a.getCedula() == cedula && a.getContrasena().equals(contrasena)){
                 return a;
             }

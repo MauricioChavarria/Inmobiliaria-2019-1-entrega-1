@@ -21,7 +21,7 @@ public class SerializerData {
 	static LinkedList<Object> objetos = new LinkedList<Object>();
 	static String nombreArchivo = System.getProperty("user.dir");
 
-	private static Path path = Paths.get(nombreArchivo, "src", "temp", "dataSerialized_"+System.currentTimeMillis());
+	private static Path path = Paths.get(nombreArchivo, "src", "temp", "dataSerialized");
 
 	
 	
@@ -66,7 +66,7 @@ public class SerializerData {
 	   ObjectInputStream ois = new ObjectInputStream(fin);
 	   objetos = (LinkedList)ois.readObject();
 	   
-	   System.out.println("Datos cargados");
+	   System.out.println("Bye.");
 	   ois.close();
 	}
 

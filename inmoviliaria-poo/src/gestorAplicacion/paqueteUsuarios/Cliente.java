@@ -29,7 +29,7 @@ public class Cliente extends Usuario implements Serializable {
     public static Cliente login(int cedula, String contrasena, ArrayList<Cliente> clientes) {
         
          for(Cliente c: clientes){
-             if(c.getCedula()== cedula && c.getContrasena()==contrasena){
+             if(c.getCedula()== cedula && c.getContrasena().equals(contrasena)){
                  return c;
              }
          }

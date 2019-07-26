@@ -28,11 +28,15 @@ public class Login extends OpcionDeMenu{
 			admin.setLogin(true);
 
 			List<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
-			opciones.add(admin);
+			//Funciones de administrador
+			opciones.add(new Registrar());
+			opciones.add(null);
 			
 			MenuDeConsola menu = new MenuDeConsola(opciones);
-			menu.mostrarMenu();
-		}else System.out.println("El usuario no existe");
+		}else {			
+			System.out.println("El usuario no existe");
+		}
+		System.out.println("\n");
 	}
 
 	@Override
