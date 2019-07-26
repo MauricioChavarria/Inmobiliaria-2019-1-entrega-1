@@ -7,7 +7,7 @@ import java.util.*;
  */
 public class MenuDeConsola {
 
-	public static List<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
+	private static List<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
 
     public MenuDeConsola(List<OpcionDeMenu> opcionesNuevas){
 		this.opciones = opcionesNuevas;
@@ -15,9 +15,13 @@ public class MenuDeConsola {
 
 	public void mostrarMenu(){
 		int i = 1;
-		for(OpcionDeMenu op : this.opciones) {
+		for(OpcionDeMenu op : this.extracted()) {
 			System.out.println(i+" "+op);
 			i++;
 		}
+	}
+
+	private List<OpcionDeMenu> extracted() {
+		return opciones;
 	}
 }

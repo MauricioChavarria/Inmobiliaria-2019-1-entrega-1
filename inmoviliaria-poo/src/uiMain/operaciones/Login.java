@@ -1,8 +1,6 @@
-
-
-import static gestorAplicacion.paqueteUsuarios.Administrador.login;
-
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
 
 import gestorAplicacion.paqueteUsuarios.Administrador;
@@ -11,6 +9,8 @@ import uiMain.MenuDeConsola;
 import uiMain.OpcionDeMenu;
 
 public class Login extends OpcionDeMenu{
+
+	private boolean usuarioEntontrado = false;
 	
 	protected Login() {
 		super("----Menú principal----");
@@ -25,23 +25,17 @@ public class Login extends OpcionDeMenu{
 		String password = leer.next();
 		
 		//Buscar en cada uno de los tipos de usuarios
-		for(Administrador admin: Administrador.admins){
-			if(login(cedula,password) != null){
-				admin.setLogin(true);
+		Usuario user = Administrador.login(cedula,password);
+		if(user != null){
+			usuarioEntontrado = true;
+			user.setLogin(true);
 
-				HashMap<String,OpcionDeMenu> subopt = new HashMap<String,OpcionDeMenu>();
-				subopt.put("1", admin);
-				/* 
-					NOTA: Desarrollar la clase que instancia de administrador y de opcion menu
-					para que esta sea una operacion en el menu de consola
-				
-				*/
-
-				
-			}
+			List<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
+			opciones.add(user);
+			
+			MenuDeConsola menu = new MenuDeConsola(opciones);
+			menu.mostrarMenu();
 		}
-		
-		
 	}
 
 	@Override

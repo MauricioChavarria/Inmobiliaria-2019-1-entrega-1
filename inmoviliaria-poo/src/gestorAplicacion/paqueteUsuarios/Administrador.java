@@ -1,6 +1,8 @@
 package gestorAplicacion.paqueteUsuarios;
 
 import gestorAplicacion.paqueteServicios.Inmueble;
+
+import java.awt.SystemTray;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -65,11 +67,11 @@ public class Administrador extends Usuario  {
 
    @Override
 	public void ejecutar() {
-		
+		System.out.println("1: Listar funcionarios\n:");
 	}
 
 	@Override
 	public String toString() {
-		return null;
+        return "Opciones de Administrador";	
 	}
 }
