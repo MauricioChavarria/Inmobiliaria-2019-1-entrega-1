@@ -28,7 +28,7 @@ class Main {
 		// Contrato test6 = new Contrato(123,new Date(0), 2.0, test3, true);
 		
 		SerializerData data = new SerializerData();
-		System.out.println("SIZE: "+Administrador.admins.size());
+		System.out.println("SIZE USERS LIST: "+Administrador.admins.size());
 		System.out.println(Administrador.admins.get(0).getCedula()+" - "+Administrador.admins.get(0).getContrasena());
 		
 		//Menu inicial
