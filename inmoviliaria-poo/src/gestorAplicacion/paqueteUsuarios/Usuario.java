@@ -7,14 +7,24 @@ public class Usuario extends OpcionDeMenu {
 	private String nombre;
     	private String correo;
     	private String contrasena;
-    	private String direccion;
-	
-	public Usuario(int cedula, String nombre, String correo, String contrasena, String direccion) {
-		this.cedula=cedula;
-		this.nombre=nombre;
-		this.correo=correo;
-		this.contrasena=contrasena;
-		this.direccion=direccion;
+		private String direccion;
+		private Boolean login = false;
+
+	public Usuario(int cedula, String nombre, String correo, String contrasena, String direccion,String tituloMenu) {
+		super(tituloMenu);
+		this.cedula = cedula;
+		this.nombre = nombre;
+		this.correo = correo;
+		this.contrasena = contrasena;
+		this.direccion = direccion;
+	}
+
+	public Boolean getLogin() {
+		return login;
+	}
+
+	public void setLogin(Boolean login) {
+		this.login = login;
 	}
 
 	public int getCedula() {
