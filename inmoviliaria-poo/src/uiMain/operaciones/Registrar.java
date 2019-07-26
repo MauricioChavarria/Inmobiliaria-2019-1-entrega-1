@@ -59,7 +59,7 @@ public class Registrar extends OpcionDeMenu{
 
 	@Override
 	public String toString() {
-		return "Iniciar sesión";
+		return "Registrarse";
 	}
 
 }

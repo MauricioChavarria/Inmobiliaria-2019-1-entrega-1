@@ -18,7 +18,7 @@ class Main {
 		
 		//Obtener data y cargar
 		
-		//Administrador test = new Administrador(123, "Admin", "admin@admin.com", "123", "mi casa");
+		Administrador test = new Administrador(111, "Admin1", "admin1@admin.com", "123", "mi casa1");
 		// Cliente test1 = new Cliente(1234, "Client", "client@admin.com", "123", "mi casa");
 		// Funcionario test2 = new Funcionario(12345, "Client", "client@admin.com", "123", "mi casa", 123L, 123L, test1);
 		// Inmueble test3 = new Inmueble(123456, 123, 123, true, true, 50, 2, 2, "feo", null, "medellin", 90, true);
@@ -27,23 +27,28 @@ class Main {
 		// Contrato test6 = new Contrato(123,new Date(0), 2.0, test3, true);
 		
 		SerializerData data = new SerializerData();
-		//data.finalize();
+		data.finalize();
 		
 		System.out.println(Administrador.admins.get(0).getCedula());
 		System.out.println(Administrador.admins.get(0).getContrasena());
 		
 		
-		opciones.push(new Login());
+		opciones.add(new Login());
+		opciones.add(new Registrar());
 		
 		MenuDeConsola menu = new MenuDeConsola(opciones);
-		menu.mostrarMenu();
 		
-		System.out.println("Ingrese una opcion: ");
-		Scanner entrada = new Scanner(System.in);
-		
-		int op = entrada.nextInt();
-		
-		opciones.get(op-1).ejecutar();
+		while(true){
+			menu.mostrarMenu();
+			
+			System.out.println("Ingrese una opcion: ");
+			Scanner entrada = new Scanner(System.in);
+			
+			int op = entrada.nextInt();
+			
+			opciones.get(op-1).ejecutar();
+			
+		}
 
 
 	}

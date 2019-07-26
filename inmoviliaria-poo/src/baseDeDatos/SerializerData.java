@@ -21,7 +21,7 @@ public class SerializerData {
 	static LinkedList<Object> objetos = new LinkedList<Object>();
 	static String nombreArchivo = System.getProperty("user.dir");
 
-	private static Path path = Paths.get(nombreArchivo, "src", "temp", "dataSerialized");
+	private static Path path = Paths.get(nombreArchivo, "src", "temp", "dataSerialized_"+System.currentTimeMillis());
 
 	
 	
@@ -80,6 +80,7 @@ public class SerializerData {
 		//objetos.push(Contrato.contratos);
 		try{
 			serializeDataOut();
+			System.out.println("Datos guardados");
 		}catch(IOException e){
 			System.out.println("Error al guardar datos \n" + e);
 		}
