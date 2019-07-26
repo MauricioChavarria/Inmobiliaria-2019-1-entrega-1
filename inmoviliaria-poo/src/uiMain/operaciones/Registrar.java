@@ -9,17 +9,17 @@ import gestorAplicacion.paqueteUsuarios.Usuario;
 import uiMain.MenuDeConsola;
 import uiMain.OpcionDeMenu;
 
-public class Login extends OpcionDeMenu{
+public class Registrar extends OpcionDeMenu{
 
 	private boolean usuarioEntontrado = false;
 
 	@Override
 	public void ejecutar() {
 		Scanner leer = new Scanner(System.in);
-		System.out.print("Ingrese su numero de cedula: ");
+		System.out.print("Ingrese numero de cedula: ");
 		int cedula = leer.nextInt();
-		System.out.print("Ingrese su contraseña: ");
-		String password = leer.next();
+		System.out.print("Ingrese nombre: ");
+		String nombre = leer.next();
 		
 		//Buscar en cada uno de los tipos de usuarios
 		Usuario user = Administrador.login(cedula,password);

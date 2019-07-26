@@ -4,8 +4,8 @@ public abstract class OpcionDeMenu {
 	
 	private String key;
 	
-	protected OpcionDeMenu(String tituloMenu) {
-		System.out.println(tituloMenu);
+	protected OpcionDeMenu() {
+		System.out.println();
 	}
 
 	public void setkey(String key_n){
