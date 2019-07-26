@@ -1,12 +1,17 @@
 package gestorAplicacion.paqueteServicios;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Inmueble {
+public class Inmueble implements Serializable {
     
-    private int codigo_Inmueble;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int codigo_Inmueble;
 	private int predial;
     private int estrato;
     private boolean vigilancia;

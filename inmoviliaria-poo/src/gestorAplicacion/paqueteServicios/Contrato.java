@@ -1,12 +1,17 @@
 package gestorAplicacion.paqueteServicios;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Contrato {
+public class Contrato implements Serializable {
 
-    private int codigo;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int codigo;
     private Date fecha;
     private double valor;
     private Inmueble inmueble;
